@@ -184,7 +184,7 @@ export default function DelayAlertsPage() {
             <button
               type="button"
               onClick={() => router.push("/dashboard")}
-              className="mb-6 inline-flex items-center gap-2 rounded-lg text-[10px] font-semibold text-[#aebbb7] transition hover:text-white sm:text-xs"
+              className="mb-6 inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-[#aebbb7] transition hover:text-white sm:text-sm"
             >
               <ArrowLeft size={15} />
               Dashboard
@@ -195,7 +195,7 @@ export default function DelayAlertsPage() {
                 <div className="mb-3 flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#c47a44]" />
 
-                  <span className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                  <span className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                     Project Monitoring
                   </span>
                 </div>
@@ -204,14 +204,14 @@ export default function DelayAlertsPage() {
                   Delay Alerts
                 </h1>
 
-                <p className="mt-2 max-w-2xl text-xs leading-6 text-[#aebbb7] sm:text-sm">
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-[#aebbb7] sm:text-sm">
                   Identify delayed and at-risk activities
                   before they impact the project schedule.
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.045] px-3 py-2 text-[9px] font-semibold text-[#b8c3c0]">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.045] px-3 py-2 text-[12px] font-semibold text-[#b8c3c0]">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#c47a44] opacity-60" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#c47a44]" />
@@ -223,7 +223,7 @@ export default function DelayAlertsPage() {
                 <button
                   type="button"
                   onClick={loadAlerts}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 py-2.5 text-[10px] font-bold text-white transition hover:bg-white/[0.10]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/[0.10]"
                 >
                   <RefreshCw
                     size={14}
@@ -236,7 +236,7 @@ export default function DelayAlertsPage() {
 
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#c47a44] px-4 py-2.5 text-[10px] font-bold text-white shadow-sm transition hover:bg-[#b46c39]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#c47a44] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#b46c39]"
                 >
                   <Download size={14} />
                   Export Report
@@ -258,7 +258,7 @@ export default function DelayAlertsPage() {
               </div>
 
               <div className="min-w-0">
-                <p className="text-[8px] font-extrabold uppercase tracking-[0.18em] text-[#929c99]">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#929c99]">
                   Active Project
                 </p>
 
@@ -266,7 +266,7 @@ export default function DelayAlertsPage() {
                   Metro Line 3
                 </h2>
 
-                <div className="mt-1 flex items-center gap-1.5 text-[9px] text-[#8b9693]">
+                <div className="mt-1 flex items-center gap-1.5 text-[12px] text-[#8b9693]">
                   <span>Project ID · P-001</span>
                   <span className="h-1 w-1 rounded-full bg-[#c47a44]" />
                   <span>{projectStatus}</span>
@@ -355,13 +355,13 @@ export default function DelayAlertsPage() {
               </h3>
 
               {delayedCount > 0 && (
-                <span className="rounded-full bg-[#fff0f0] px-2 py-1 text-[8px] font-extrabold uppercase tracking-wide text-[#b84c4c]">
+                <span className="rounded-full bg-[#fff0f0] px-2 py-1 text-[11px] font-extrabold uppercase tracking-wide text-[#b84c4c]">
                   Priority
                 </span>
               )}
             </div>
 
-            <p className="mt-1.5 text-xs leading-5 text-[#71807d]">
+            <p className="mt-1.5 text-sm leading-5 text-[#71807d]">
               <strong className="text-[#b84c4c]">
                 {delayedCount}
               </strong>{" "}
@@ -374,7 +374,7 @@ export default function DelayAlertsPage() {
             </p>
           </div>
 
-          <div className="hidden shrink-0 items-center gap-1.5 rounded-lg border border-[#eadfd5] bg-white px-3 py-2 text-[9px] font-semibold text-[#8a9693] lg:flex">
+          <div className="hidden shrink-0 items-center gap-1.5 rounded-lg border border-[#eadfd5] bg-white px-3 py-2 text-[12px] font-semibold text-[#8a9693] lg:flex">
             <CalendarDays size={12} />
             Schedule review
           </div>
@@ -384,7 +384,7 @@ export default function DelayAlertsPage() {
             ERROR
         ===================================================== */}
         {error && (
-          <section className="mb-5 flex items-center gap-3 rounded-xl border border-[#f0caca] bg-[#fff2f2] px-4 py-3 text-xs font-medium text-[#b84c4c]">
+          <section className="mb-5 flex items-center gap-3 rounded-xl border border-[#f0caca] bg-[#fff2f2] px-4 py-3 text-sm font-medium text-[#b84c4c]">
             <AlertCircle size={16} />
             {error}
           </section>
@@ -406,7 +406,7 @@ export default function DelayAlertsPage() {
                 placeholder="Search activity, owner or location..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="h-10.5 w-full rounded-xl border border-[#dfe4e0] bg-[#f8faf8] pl-10 pr-4 text-[10px] text-[#24302f] outline-none transition placeholder:text-[#9aa5a2] focus:border-[#68364b] focus:bg-white focus:ring-4 focus:ring-[#68364b]/[0.06]"
+                className="h-10.5 w-full rounded-xl border border-[#dfe4e0] bg-[#f8faf8] pl-10 pr-4 text-sm text-[#24302f] outline-none transition placeholder:text-[#9aa5a2] focus:border-[#68364b] focus:bg-white focus:ring-4 focus:ring-[#68364b]/[0.06]"
               />
             </div>
 
@@ -426,7 +426,7 @@ export default function DelayAlertsPage() {
                       key={item}
                       type="button"
                       onClick={() => setFilter(item)}
-                      className={`flex items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-[9px] font-extrabold transition sm:gap-2 sm:px-4 sm:text-[10px] ${
+                      className={`flex items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-[12px] font-extrabold transition sm:gap-2 sm:px-4 sm:text-sm ${
                         filter === item
                           ? "bg-[#68364b] text-white shadow-sm"
                           : "bg-[#f5f7f4] text-[#71807d] hover:bg-[#ecefeb]"
@@ -435,7 +435,7 @@ export default function DelayAlertsPage() {
                       {item}
 
                       <span
-                        className={`flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[8px] ${
+                        className={`flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] ${
                           filter === item
                             ? "bg-white/15 text-white"
                             : "bg-white text-[#71807d] shadow-sm"
@@ -461,7 +461,7 @@ export default function DelayAlertsPage() {
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#b84c4c]" />
 
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.17em] text-[#929c99]">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.17em] text-[#929c99]">
                   Alert Registry
                 </p>
               </div>
@@ -470,7 +470,7 @@ export default function DelayAlertsPage() {
                 Activity Alerts
               </h2>
 
-              <p className="mt-1 text-[10px] text-[#8a9693]">
+              <p className="mt-1 text-sm text-[#8a9693]">
                 Showing{" "}
                 <strong className="text-[#35413f]">
                   {filteredActivities.length}
@@ -479,7 +479,7 @@ export default function DelayAlertsPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 rounded-full border border-[#e3e7e3] bg-[#f7f9f7] px-3 py-2 text-[9px] font-semibold text-[#71807d]">
+            <div className="flex items-center gap-2 rounded-full border border-[#e3e7e3] bg-[#f7f9f7] px-3 py-2 text-[12px] font-semibold text-[#71807d]">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#b84c4c] opacity-50" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#b84c4c]" />
@@ -502,7 +502,7 @@ export default function DelayAlertsPage() {
                 Loading alerts...
               </p>
 
-              <p className="mt-1 text-[10px] text-[#8a9693]">
+              <p className="mt-1 text-sm text-[#8a9693]">
                 Checking the latest project schedule.
               </p>
             </div>
@@ -557,15 +557,15 @@ export default function DelayAlertsPage() {
                                 </div>
 
                                 <div className="min-w-0">
-                                  <span className="text-[9px] font-extrabold uppercase tracking-wide text-[#68364b]">
+                                  <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#68364b]">
                                     {activity.wbs_code}
                                   </span>
 
-                                  <p className="mt-1 line-clamp-2 text-[11px] font-bold leading-5 text-[#24302f]">
+                                  <p className="mt-1 line-clamp-2 text-sm font-bold leading-5 text-[#24302f]">
                                     {activity.activity_name}
                                   </p>
 
-                                  <p className="mt-1 text-[8px] text-[#929c99]">
+                                  <p className="mt-1 text-[11px] text-[#929c99]">
                                     Activity ID:{" "}
                                     {activity.activity_id}
                                   </p>
@@ -577,11 +577,11 @@ export default function DelayAlertsPage() {
                             <td className="px-5 py-4 align-top">
                               <div className="w-[125px]">
                                 <div className="flex items-center justify-between gap-2">
-                                  <span className="text-[11px] font-extrabold text-[#24302f]">
+                                  <span className="text-sm font-extrabold text-[#24302f]">
                                     {progress}%
                                   </span>
 
-                                  <span className="text-[8px] text-[#929c99]">
+                                  <span className="text-[11px] text-[#929c99]">
                                     {activity.actual_qty}/
                                     {activity.planned_qty}
                                   </span>
@@ -600,7 +600,7 @@ export default function DelayAlertsPage() {
                                   />
                                 </div>
 
-                                <p className="mt-1 text-[8px] text-[#a0aaa7]">
+                                <p className="mt-1 text-[11px] text-[#a0aaa7]">
                                   Unit: {activity.unit || "—"}
                                 </p>
                               </div>
@@ -608,14 +608,14 @@ export default function DelayAlertsPage() {
 
                             {/* PHASE */}
                             <td className="px-5 py-4 align-top">
-                              <span className="block max-w-[180px] text-[10px] leading-5 text-[#52605e]">
+                              <span className="block max-w-[180px] text-sm leading-5 text-[#52605e]">
                                 {activity.phase}
                               </span>
                             </td>
 
                             {/* OWNER */}
                             <td className="px-5 py-4 align-top">
-                              <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-[#f5f7f4] px-2.5 py-1.5 text-[9px] font-semibold text-[#52605e]">
+                              <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-[#f5f7f4] px-2.5 py-1.5 text-[12px] font-semibold text-[#52605e]">
                                 <ShieldAlert
                                   size={11}
                                   className="text-[#8b9693]"
@@ -626,7 +626,7 @@ export default function DelayAlertsPage() {
 
                             {/* VARIANCE */}
                             <td className="px-5 py-4 align-top">
-                              <span className="inline-flex whitespace-nowrap rounded-lg border border-[#f1d7d7] bg-[#fff3f3] px-2.5 py-1.5 text-[9px] font-extrabold text-[#b84c4c]">
+                              <span className="inline-flex whitespace-nowrap rounded-lg border border-[#f1d7d7] bg-[#fff3f3] px-2.5 py-1.5 text-[12px] font-extrabold text-[#b84c4c]">
                                 {Math.abs(
                                   activity.variance
                                 )}{" "}
@@ -637,7 +637,7 @@ export default function DelayAlertsPage() {
                             {/* STATUS */}
                             <td className="px-5 py-4 align-top">
                               <span
-                                className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1.5 text-[8px] font-extrabold uppercase tracking-wide ${
+                                className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1.5 text-[11px] font-extrabold uppercase tracking-wide ${
                                   isDelayed
                                     ? "border-[#f1d5d5] bg-[#fff0f0] text-[#b84c4c]"
                                     : "border-[#f0dcc8] bg-[#fff5eb] text-[#c47a44]"
@@ -657,7 +657,7 @@ export default function DelayAlertsPage() {
 
                             {/* REASON */}
                             <td className="px-5 py-4 align-top">
-                              <span className="block max-w-[220px] text-[10px] leading-5 text-[#65716e]">
+                              <span className="block max-w-[220px] text-sm leading-5 text-[#65716e]">
                                 {activity.reason}
                               </span>
                             </td>
@@ -671,7 +671,7 @@ export default function DelayAlertsPage() {
                                     `/wbs/activity/${activity.activity_id}`
                                   )
                                 }
-                                className="group/button inline-flex items-center gap-1.5 rounded-lg border border-[#dddeda] bg-white px-3 py-2 text-[9px] font-extrabold text-[#68364b] transition hover:border-[#68364b] hover:bg-[#f8f3f5]"
+                                className="group/button inline-flex items-center gap-1.5 rounded-lg border border-[#dddeda] bg-white px-3 py-2 text-[12px] font-extrabold text-[#68364b] transition hover:border-[#68364b] hover:bg-[#f8f3f5]"
                               >
                                 <Eye size={13} />
 
@@ -702,7 +702,7 @@ export default function DelayAlertsPage() {
                     No alerts found
                   </h3>
 
-                  <p className="mt-1 max-w-sm text-[10px] leading-5 text-[#8a9693]">
+                  <p className="mt-1 max-w-sm text-sm leading-5 text-[#8a9693]">
                     Try changing the search text or status
                     filter.
                   </p>
@@ -713,7 +713,7 @@ export default function DelayAlertsPage() {
 
           {/* TABLE FOOTER */}
           {!loading && filteredActivities.length > 0 && (
-            <div className="flex flex-col gap-2 border-t border-[#e5e9e5] bg-[#fafbf9] px-4 py-3.5 text-[9px] text-[#8a9693] sm:flex-row sm:items-center sm:justify-between sm:px-5">
+            <div className="flex flex-col gap-2 border-t border-[#e5e9e5] bg-[#fafbf9] px-4 py-3.5 text-[12px] text-[#8a9693] sm:flex-row sm:items-center sm:justify-between sm:px-5">
               <div className="flex items-center gap-1.5">
                 <MapPin
                   size={11}
@@ -731,7 +731,7 @@ export default function DelayAlertsPage() {
         </section>
 
         {/* FOOTER */}
-        <footer className="mt-6 flex flex-col gap-2 border-t border-[#dfe4df] pt-5 text-[9px] text-[#8a9693] sm:flex-row sm:items-center sm:justify-between sm:text-[10px]">
+        <footer className="mt-6 flex flex-col gap-2 border-t border-[#dfe4df] pt-5 text-[12px] text-[#8a9693] sm:flex-row sm:items-center sm:justify-between sm:text-sm">
           <span>Live data from PostgreSQL</span>
 
           <span>
@@ -763,7 +763,7 @@ function ProjectMetric({
       <div className="flex items-center gap-1.5">
         <span className={className}>{icon}</span>
 
-        <p className="truncate text-[7px] font-extrabold uppercase tracking-[0.1em] text-[#929c99] sm:text-[8px]">
+        <p className="truncate text-[7px] font-extrabold uppercase tracking-[0.1em] text-[#929c99] sm:text-[11px]">
           {label}
         </p>
       </div>
@@ -808,7 +808,7 @@ function SummaryCard({
         <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#dfe4df]" />
       </div>
 
-      <p className="mt-4 truncate text-[9px] font-semibold text-[#8b9693] sm:text-[10px]">
+      <p className="mt-4 truncate text-[12px] font-semibold text-[#8b9693] sm:text-sm">
         {label}
       </p>
 
@@ -818,7 +818,7 @@ function SummaryCard({
         {value}
       </p>
 
-      <p className="mt-1 text-[8px] leading-4 text-[#929c99] sm:text-[9px]">
+      <p className="mt-1 text-[11px] leading-4 text-[#929c99] sm:text-[12px]">
         {description}
       </p>
     </div>
@@ -835,7 +835,7 @@ function Th({
   children: React.ReactNode;
 }) {
   return (
-    <th className="whitespace-nowrap px-5 py-3.5 text-left text-[8px] font-extrabold uppercase tracking-[0.14em] text-[#89938f]">
+    <th className="whitespace-nowrap px-5 py-3.5 text-left text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#89938f]">
       {children}
     </th>
   );

@@ -235,7 +235,7 @@ export default function ProjectsPage() {
                   <FolderKanban size={14} />
                 </div>
 
-                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                   Project Management
                 </span>
               </div>
@@ -244,7 +244,7 @@ export default function ProjectsPage() {
                 Project Portfolio
               </h1>
 
-              <p className="mt-2 max-w-xl text-xs leading-6 text-[#aab7b4] sm:text-sm">
+              <p className="mt-2 max-w-xl text-sm leading-6 text-[#aab7b4] sm:text-sm">
                 Manage and monitor all infrastructure projects
                 from one centralized workspace.
               </p>
@@ -252,7 +252,7 @@ export default function ProjectsPage() {
 
             <button
               type="button"
-              className="group flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#c47a44] px-5 text-xs font-bold text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#d08a55] sm:w-fit"
+              className="group flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#c47a44] px-5 text-sm font-bold text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#d08a55] sm:w-fit"
             >
               <Plus
                 size={16}
@@ -273,7 +273,7 @@ export default function ProjectsPage() {
 
             <div className="relative flex items-start justify-between gap-2">
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-[10px]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-sm">
                   Total Projects
                 </p>
 
@@ -287,7 +287,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            <div className="relative mt-4 flex items-center gap-1.5 text-[10px] text-[#8b9693]">
+            <div className="relative mt-4 flex items-center gap-1.5 text-sm text-[#8b9693]">
               <Layers3 size={12} />
               Across all project locations
             </div>
@@ -299,7 +299,7 @@ export default function ProjectsPage() {
 
             <div className="relative flex items-start justify-between gap-2">
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-[10px]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-sm">
                   Active Projects
                 </p>
 
@@ -313,7 +313,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            <div className="relative mt-4 flex items-center gap-1.5 text-[10px] text-[#8b9693]">
+            <div className="relative mt-4 flex items-center gap-1.5 text-sm text-[#8b9693]">
               <TrendingUp size={12} />
               Currently under execution
             </div>
@@ -325,7 +325,7 @@ export default function ProjectsPage() {
 
             <div className="relative flex items-start justify-between gap-2">
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-[10px]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-sm">
                   At Risk
                 </p>
 
@@ -339,7 +339,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            <div className="relative mt-4 flex items-center gap-1.5 text-[10px] text-[#8b9693]">
+            <div className="relative mt-4 flex items-center gap-1.5 text-sm text-[#8b9693]">
               <TriangleAlert size={12} />
               Projects requiring attention
             </div>
@@ -351,7 +351,7 @@ export default function ProjectsPage() {
 
             <div className="relative flex items-start justify-between gap-2">
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-[10px]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.13em] text-[#8b9693] sm:text-sm">
                   Completed
                 </p>
 
@@ -365,7 +365,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            <div className="relative mt-4 flex items-center gap-1.5 text-[10px] text-[#8b9693]">
+            <div className="relative mt-4 flex items-center gap-1.5 text-sm text-[#8b9693]">
               <CheckCircle2 size={12} />
               Successfully completed projects
             </div>
@@ -388,7 +388,7 @@ export default function ProjectsPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search projects..."
-                className="h-11 w-full rounded-xl border border-[#e3e5e2] bg-[#f8f9f7] pl-10 pr-4 text-xs text-[#24302f] outline-none transition focus:border-[#68364b] focus:bg-white focus:ring-4 focus:ring-[#68364b]/[0.07] placeholder:text-[#9aa3a0]"
+                className="h-11 w-full rounded-xl border border-[#e3e5e2] bg-[#f8f9f7] pl-10 pr-4 text-sm text-[#24302f] outline-none transition focus:border-[#68364b] focus:bg-white focus:ring-4 focus:ring-[#68364b]/[0.07] placeholder:text-[#9aa3a0]"
               />
             </div>
 
@@ -398,7 +398,7 @@ export default function ProjectsPage() {
                   key={item}
                   type="button"
                   onClick={() => setFilter(item)}
-                  className={`rounded-lg px-3 py-2.5 text-[10px] font-bold transition sm:px-4 sm:text-[11px] ${
+                  className={`rounded-lg px-3 py-2.5 text-sm font-bold transition sm:px-4 sm:text-sm ${
                     filter === item
                       ? "bg-[#68364b] text-white shadow-sm"
                       : "text-[#788380] hover:bg-white hover:text-[#35413f]"
@@ -415,7 +415,7 @@ export default function ProjectsPage() {
             ERROR
         ======================================================= */}
         {error && (
-          <div className="mt-5 rounded-xl border border-[#f0caca] bg-[#fff5f5] px-4 py-3 text-xs font-medium text-[#a34c4c]">
+          <div className="mt-5 rounded-xl border border-[#f0caca] bg-[#fff5f5] px-4 py-3 text-sm font-medium text-[#a34c4c]">
             {error}
           </div>
         )}
@@ -429,7 +429,7 @@ export default function ProjectsPage() {
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c47a44]" />
 
-                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#9a898f] sm:text-[10px]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#9a898f] sm:text-sm">
                   Project Portfolio
                 </p>
               </div>
@@ -439,7 +439,7 @@ export default function ProjectsPage() {
               </h2>
             </div>
 
-            <div className="rounded-full border border-[#dfe2de] bg-white px-3 py-1.5 text-[9px] font-bold text-[#7f8986] sm:text-[10px]">
+            <div className="rounded-full border border-[#dfe2de] bg-white px-3 py-1.5 text-[12px] font-bold text-[#7f8986] sm:text-sm">
               {filteredProjects.length} projects
             </div>
           </div>
@@ -449,7 +449,7 @@ export default function ProjectsPage() {
             <div className="rounded-[22px] border border-[#dfe2de] bg-white p-10 text-center shadow-[0_8px_30px_rgba(36,48,47,0.035)]">
               <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-[#dddfe0] border-t-[#68364b]" />
 
-              <p className="mt-4 text-xs font-medium text-[#71807d]">
+              <p className="mt-4 text-sm font-medium text-[#71807d]">
                 Loading projects...
               </p>
             </div>
@@ -466,7 +466,7 @@ export default function ProjectsPage() {
                 No projects found
               </p>
 
-              <p className="mt-1 text-xs text-[#71807d]">
+              <p className="mt-1 text-sm text-[#71807d]">
                 Try changing your search or filter.
               </p>
             </div>
@@ -518,7 +518,7 @@ export default function ProjectsPage() {
 
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-2">
-                              <span className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#68364b]">
+                              <span className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#68364b]">
                                 {project.id}
                               </span>
 
@@ -544,7 +544,7 @@ export default function ProjectsPage() {
                       </div>
 
                       {/* META */}
-                      <div className="mt-5 flex flex-col gap-2 text-[10px]">
+                      <div className="mt-5 flex flex-col gap-2 text-sm">
                         <div className="flex items-center gap-2 text-[#71807d]">
                           <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[#f5f6f4] text-[#7e8986]">
                             <MapPin size={12} />
@@ -565,7 +565,7 @@ export default function ProjectsPage() {
                       <div className="mt-5 rounded-xl border border-[#e7e9e6] bg-[#f8f9f7] p-4">
                         <div className="mb-2.5 flex items-center justify-between">
                           <div>
-                            <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#89938f]">
+                            <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#89938f]">
                               Project Progress
                             </span>
                           </div>
@@ -594,11 +594,11 @@ export default function ProjectsPage() {
                       {/* DETAILS */}
                       <div className="mt-5 grid grid-cols-2 gap-3">
                         <div className="rounded-xl border border-[#e7e9e6] bg-white p-3">
-                          <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
+                          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
                             Start Date
                           </p>
 
-                          <p className="mt-1.5 flex items-center gap-1.5 text-[10px] font-bold text-[#35413f]">
+                          <p className="mt-1.5 flex items-center gap-1.5 text-sm font-bold text-[#35413f]">
                             <CalendarDays
                               size={12}
                               className="text-[#68364b]"
@@ -610,11 +610,11 @@ export default function ProjectsPage() {
                         </div>
 
                         <div className="rounded-xl border border-[#e7e9e6] bg-white p-3">
-                          <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
+                          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
                             End Date
                           </p>
 
-                          <p className="mt-1.5 flex items-center gap-1.5 text-[10px] font-bold text-[#35413f]">
+                          <p className="mt-1.5 flex items-center gap-1.5 text-sm font-bold text-[#35413f]">
                             <CalendarDays
                               size={12}
                               className="text-[#c47a44]"
@@ -626,7 +626,7 @@ export default function ProjectsPage() {
                         </div>
 
                         <div className="rounded-xl border border-[#e7e9e6] bg-[#fafbf9] p-3">
-                          <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
+                          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
                             Activities
                           </p>
 
@@ -636,7 +636,7 @@ export default function ProjectsPage() {
                         </div>
 
                         <div className="rounded-xl border border-[#efdada] bg-[#fffafa] p-3">
-                          <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
+                          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa3a0]">
                             Delayed
                           </p>
 
@@ -649,11 +649,11 @@ export default function ProjectsPage() {
                       {/* FOOTER */}
                       <div className="mt-5 flex flex-col gap-3 border-t border-[#e8ebe8] pt-4 sm:flex-row sm:items-center sm:justify-between">
                         <div className="min-w-0">
-                          <p className="text-[9px] uppercase tracking-[0.1em] text-[#9aa3a0]">
+                          <p className="text-[12px] uppercase tracking-[0.1em] text-[#9aa3a0]">
                             Project Manager
                           </p>
 
-                          <p className="mt-1 truncate text-[10px] font-bold text-[#4d5956]">
+                          <p className="mt-1 truncate text-sm font-bold text-[#4d5956]">
                             {project.manager}
                           </p>
                         </div>
@@ -661,7 +661,7 @@ export default function ProjectsPage() {
                         <button
                           type="button"
                           onClick={() => router.push("/wbs")}
-                          className="group/btn flex w-full items-center justify-center gap-2 rounded-xl bg-[#68364b] px-4 py-2.5 text-[10px] font-bold text-white shadow-sm transition hover:bg-[#592d40] hover:shadow-md sm:w-fit"
+                          className="group/btn flex w-full items-center justify-center gap-2 rounded-xl bg-[#68364b] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#592d40] hover:shadow-md sm:w-fit"
                         >
                           View Project
                           <ArrowRight
@@ -681,7 +681,7 @@ export default function ProjectsPage() {
         {/* =======================================================
             FOOTER
         ======================================================= */}
-        <footer className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-[#dfe2de] py-5 text-[9px] text-[#8a9491] sm:flex-row sm:text-[10px]">
+        <footer className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-[#dfe2de] py-5 text-[12px] text-[#8a9491] sm:flex-row sm:text-sm">
           <p className="font-medium">
             FieldSync Project Management
           </p>

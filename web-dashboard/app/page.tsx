@@ -183,7 +183,7 @@ export default function Home() {
                     Field<span className="text-[#C47A44]">Sync</span>
                   </div>
 
-                  <div className="mt-0.5 text-[8px] font-semibold uppercase tracking-[2px] text-[#70817D]">
+                  <div className="mt-0.5 text-[11px] font-semibold uppercase tracking-[2px] text-[#70817D]">
                     Infrastructure Intelligence
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export default function Home() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3F8065]" />
                 </span>
 
-                <span className="text-[9px] font-semibold tracking-wide text-[#91A09C]">
+                <span className="text-[12px] font-semibold tracking-wide text-[#91A09C]">
                   SYSTEM ONLINE
                 </span>
               </div>
@@ -210,7 +210,7 @@ export default function Home() {
                   className="text-[#C47A44]"
                 />
 
-                <span className="text-[9px] font-bold uppercase tracking-[1.8px] text-[#C47A44]">
+                <span className="text-[12px] font-bold uppercase tracking-[1.8px] text-[#C47A44]">
                   Intelligent Project Operations
                 </span>
               </div>
@@ -238,11 +238,11 @@ export default function Home() {
                     <Activity size={17} />
                   </div>
 
-                  <p className="text-[11px] font-semibold text-white">
+                  <p className="text-sm font-semibold text-white">
                     Real-Time
                   </p>
 
-                  <p className="mt-1 text-[9px] leading-4 text-[#71817D]">
+                  <p className="mt-1 text-[12px] leading-4 text-[#71817D]">
                     Live progress tracking
                   </p>
                 </div>
@@ -252,11 +252,11 @@ export default function Home() {
                     <BarChart3 size={17} />
                   </div>
 
-                  <p className="text-[11px] font-semibold text-white">
+                  <p className="text-sm font-semibold text-white">
                     Schedule
                   </p>
 
-                  <p className="mt-1 text-[9px] leading-4 text-[#71817D]">
+                  <p className="mt-1 text-[12px] leading-4 text-[#71817D]">
                     Plan vs actual insights
                   </p>
                 </div>
@@ -266,11 +266,11 @@ export default function Home() {
                     <Database size={17} />
                   </div>
 
-                  <p className="text-[11px] font-semibold text-white">
+                  <p className="text-sm font-semibold text-white">
                     Evidence
                   </p>
 
-                  <p className="mt-1 text-[9px] leading-4 text-[#71817D]">
+                  <p className="mt-1 text-[12px] leading-4 text-[#71817D]">
                     Verified field records
                   </p>
                 </div>
@@ -284,7 +284,7 @@ export default function Home() {
                     <Check size={12} className="text-[#C47A44]" />
                   </div>
 
-                  <span className="text-[10px] text-[#7E8E8A]">
+                  <span className="text-sm text-[#7E8E8A]">
                     Field Intelligence
                   </span>
                 </div>
@@ -294,7 +294,7 @@ export default function Home() {
                     <Check size={12} className="text-[#C47A44]" />
                   </div>
 
-                  <span className="text-[10px] text-[#7E8E8A]">
+                  <span className="text-sm text-[#7E8E8A]">
                     AI-Assisted Review
                   </span>
                 </div>
@@ -304,7 +304,7 @@ export default function Home() {
                     <Check size={12} className="text-[#C47A44]" />
                   </div>
 
-                  <span className="text-[10px] text-[#7E8E8A]">
+                  <span className="text-sm text-[#7E8E8A]">
                     Schedule Linked
                   </span>
                 </div>
@@ -313,7 +313,7 @@ export default function Home() {
 
             {/* Bottom */}
             <div className="flex items-center justify-between border-t border-white/[0.06] pt-5">
-              <div className="flex items-center gap-2 text-[9px] text-[#647470]">
+              <div className="flex items-center gap-2 text-[12px] text-[#647470]">
                 <ShieldCheck size={13} />
 
                 <span>
@@ -321,7 +321,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <span className="text-[9px] font-medium tracking-wide text-[#596965]">
+              <span className="text-[12px] font-medium tracking-wide text-[#596965]">
                 FIELDSYNC / 01
               </span>
             </div>
@@ -380,7 +380,7 @@ export default function Home() {
 
                     <div className="flex items-center gap-1.5 rounded-full border border-[#DDE8E1] bg-[#F4F9F5] px-2.5 py-1.5">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#3F8065]" />
-                      <span className="text-[8px] font-bold uppercase tracking-[1px] text-[#4D7563]">
+                      <span className="text-[11px] font-bold uppercase tracking-[1px] text-[#4D7563]">
                         Secure Login
                       </span>
                     </div>
@@ -390,7 +390,7 @@ export default function Home() {
                     Welcome back
                   </h2>
 
-                  <p className="mt-2 text-[12px] leading-5 text-[#74817E]">
+                  <p className="mt-2 text-sm leading-5 text-[#74817E]">
                     Sign in to continue to your FieldSync workspace.
                   </p>
                 </div>
@@ -401,7 +401,7 @@ export default function Home() {
                   <div className="mb-5">
                     <label
                       htmlFor="email"
-                      className="mb-2 block text-[10px] font-bold uppercase tracking-[0.8px] text-[#53605D]"
+                      className="mb-2 block text-sm font-bold uppercase tracking-[0.8px] text-[#53605D]"
                     >
                       Employee ID / Email
                     </label>
@@ -424,7 +424,7 @@ export default function Home() {
                         placeholder="Enter your employee ID or email"
                         disabled={loading}
                         autoComplete="username"
-                        className="h-[51px] w-full rounded-[13px] border border-[#D9DEDB] bg-[#FCFDFC] pl-11 pr-4 text-[13px] text-[#102A2A] outline-none transition-all placeholder:text-[#A2ABA8] hover:border-[#C9D0CC] focus:border-[#68364B] focus:bg-white focus:ring-4 focus:ring-[#68364B]/[0.08] disabled:cursor-not-allowed disabled:bg-[#F5F6F5]"
+                        className="h-[51px] w-full rounded-[13px] border border-[#D9DEDB] bg-[#FCFDFC] pl-11 pr-4 text-sm text-[#102A2A] outline-none transition-all placeholder:text-[#A2ABA8] hover:border-[#C9D0CC] focus:border-[#68364B] focus:bg-white focus:ring-4 focus:ring-[#68364B]/[0.08] disabled:cursor-not-allowed disabled:bg-[#F5F6F5]"
                       />
                     </div>
                   </div>
@@ -433,7 +433,7 @@ export default function Home() {
                   <div className="mb-4">
                     <label
                       htmlFor="password"
-                      className="mb-2 block text-[10px] font-bold uppercase tracking-[0.8px] text-[#53605D]"
+                      className="mb-2 block text-sm font-bold uppercase tracking-[0.8px] text-[#53605D]"
                     >
                       Password
                     </label>
@@ -456,7 +456,7 @@ export default function Home() {
                         placeholder="Enter your password"
                         disabled={loading}
                         autoComplete="current-password"
-                        className="h-[51px] w-full rounded-[13px] border border-[#D9DEDB] bg-[#FCFDFC] pl-11 pr-14 text-[13px] text-[#102A2A] outline-none transition-all placeholder:text-[#A2ABA8] hover:border-[#C9D0CC] focus:border-[#68364B] focus:bg-white focus:ring-4 focus:ring-[#68364B]/[0.08] disabled:cursor-not-allowed disabled:bg-[#F5F6F5]"
+                        className="h-[51px] w-full rounded-[13px] border border-[#D9DEDB] bg-[#FCFDFC] pl-11 pr-14 text-sm text-[#102A2A] outline-none transition-all placeholder:text-[#A2ABA8] hover:border-[#C9D0CC] focus:border-[#68364B] focus:bg-white focus:ring-4 focus:ring-[#68364B]/[0.08] disabled:cursor-not-allowed disabled:bg-[#F5F6F5]"
                       />
 
                       <button
@@ -483,7 +483,7 @@ export default function Home() {
 
                   {/* Error */}
                   {error && (
-                    <div className="mb-5 flex items-start gap-2.5 rounded-[13px] border border-[#F1CCCC] bg-[#FEF4F4] px-3.5 py-3 text-[11px] leading-5 text-[#9B4747]">
+                    <div className="mb-5 flex items-start gap-2.5 rounded-[13px] border border-[#F1CCCC] bg-[#FEF4F4] px-3.5 py-3 text-sm leading-5 text-[#9B4747]">
                       <AlertCircle
                         size={16}
                         className="mt-0.5 shrink-0"
@@ -495,7 +495,7 @@ export default function Home() {
 
                   {/* Options */}
                   <div className="mb-6 flex items-center justify-between">
-                    <label className="flex cursor-pointer items-center gap-2 text-[11px] text-[#74817E]">
+                    <label className="flex cursor-pointer items-center gap-2 text-sm text-[#74817E]">
                       <input
                         type="checkbox"
                         disabled={loading}
@@ -508,7 +508,7 @@ export default function Home() {
                     <button
                       type="button"
                       disabled={loading}
-                      className="text-[11px] font-semibold text-[#68364B] transition hover:text-[#C47A44] disabled:cursor-not-allowed disabled:opacity-50"
+                      className="text-sm font-semibold text-[#68364B] transition hover:text-[#C47A44] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       Forgot password?
                     </button>
@@ -518,7 +518,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="group relative flex h-[52px] w-full items-center justify-center gap-2 overflow-hidden rounded-[13px] bg-[#68364B] text-[13px] font-bold text-white shadow-[0_12px_28px_rgba(104,54,75,0.2)] transition-all duration-200 hover:bg-[#592D40] hover:shadow-[0_15px_32px_rgba(104,54,75,0.26)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-80"
+                    className="group relative flex h-[52px] w-full items-center justify-center gap-2 overflow-hidden rounded-[13px] bg-[#68364B] text-sm font-bold text-white shadow-[0_12px_28px_rgba(104,54,75,0.2)] transition-all duration-200 hover:bg-[#592D40] hover:shadow-[0_15px_32px_rgba(104,54,75,0.26)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-80"
                   >
                     <span className="absolute inset-y-0 left-0 w-20 -translate-x-full skew-x-[-18deg] bg-white/[0.08] transition-transform duration-700 group-hover:translate-x-[500%]" />
 
@@ -548,16 +548,16 @@ export default function Home() {
                 <div className="mt-6 rounded-[16px] border border-[#E7EBE8] bg-[#F8FAF9] p-3.5">
                   <div className="mb-3 flex items-center justify-between">
                     <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[1.2px] text-[#53615E]">
+                      <p className="text-[12px] font-bold uppercase tracking-[1.2px] text-[#53615E]">
                         Quick access
                       </p>
 
-                      <p className="mt-0.5 text-[9px] text-[#929C99]">
+                      <p className="mt-0.5 text-[12px] text-[#929C99]">
                         Select a demo role
                       </p>
                     </div>
 
-                    <div className="rounded-full bg-[#EEF1EF] px-2 py-1 text-[8px] font-semibold text-[#7C8784]">
+                    <div className="rounded-full bg-[#EEF1EF] px-2 py-1 text-[11px] font-semibold text-[#7C8784]">
                       DEMO
                     </div>
                   </div>
@@ -595,11 +595,11 @@ export default function Home() {
                           </div>
 
                           <div className="min-w-0 flex-1">
-                            <p className="text-[10px] font-bold text-[#24312F]">
+                            <p className="text-sm font-bold text-[#24312F]">
                               {meta.label}
                             </p>
 
-                            <p className="mt-0.5 truncate text-[9px] text-[#8A9592]">
+                            <p className="mt-0.5 truncate text-[12px] text-[#8A9592]">
                               {user.email}
                             </p>
                           </div>
@@ -619,7 +619,7 @@ export default function Home() {
                 </div>
 
                 {/* Security */}
-                <div className="mt-5 flex items-center justify-center gap-2 border-t border-[#E9ECEA] pt-5 text-center text-[9px] leading-4 text-[#8D9794]">
+                <div className="mt-5 flex items-center justify-center gap-2 border-t border-[#E9ECEA] pt-5 text-center text-[12px] leading-4 text-[#8D9794]">
                   <ShieldCheck
                     size={14}
                     className="shrink-0 text-[#3F8065]"
@@ -633,7 +633,7 @@ export default function Home() {
             </div>
 
             {/* Footer */}
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-2 px-2 text-center text-[9px] text-[#909A97]">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-2 px-2 text-center text-[12px] text-[#909A97]">
               <span className="font-bold text-[#68364B]">
                 FieldSync
               </span>

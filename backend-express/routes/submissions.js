@@ -289,7 +289,20 @@ router.get('/', authenticate, async (req, res) => {
         const queryStr = `
             SELECT
                 s.*,
-                w.name AS wbs_node_name
+                w.name AS wbs_node_name,
+                (
+                    SELECT json_agg(
+                        json_build_object(
+                            'id', m.id,
+                            'storage_path', m.storage_path,
+                            'media_type', m.media_type,
+                            'file_name', m.file_name,
+                            'mime_type', m.mime_type
+                        )
+                    )
+                    FROM media_files m
+                    WHERE m.submission_id = s.id
+                ) AS media_files
             FROM submissions s
             JOIN wbs_nodes w
                 ON s.wbs_node_id = w.id

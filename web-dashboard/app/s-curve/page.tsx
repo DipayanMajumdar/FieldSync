@@ -96,7 +96,7 @@ export default function SCurvePage() {
                   <TrendingUp size={14} />
                 </div>
 
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                <span className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                   Project Analytics
                 </span>
               </div>
@@ -105,14 +105,14 @@ export default function SCurvePage() {
                 Progress S-Curve
               </h1>
 
-              <p className="mt-2 max-w-2xl text-xs leading-6 text-[#aebbb7] sm:text-sm">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#aebbb7] sm:text-sm">
                 Compare planned project progress against
                 actual field performance across the reporting
                 timeline.
               </p>
             </div>
 
-            <div className="flex w-fit items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.045] px-3 py-2 text-[9px] font-semibold text-[#b8c3c0]">
+            <div className="flex w-fit items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.045] px-3 py-2 text-[12px] font-semibold text-[#b8c3c0]">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#6da98d] opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#6da98d]" />
@@ -182,7 +182,7 @@ export default function SCurvePage() {
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#68364b]" />
 
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.17em] text-[#929c99]">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.17em] text-[#929c99]">
                   Schedule Performance
                 </p>
               </div>
@@ -191,7 +191,7 @@ export default function SCurvePage() {
                 Planned vs Actual Progress
               </h2>
 
-              <p className="mt-1 text-[10px] leading-5 text-[#8a9693]">
+              <p className="mt-1 text-sm leading-5 text-[#8a9693]">
                 Cumulative project progress over the reporting
                 period.
               </p>
@@ -225,7 +225,7 @@ export default function SCurvePage() {
                   Loading chart...
                 </p>
 
-                <p className="mt-1 text-[10px] text-[#8a9693]">
+                <p className="mt-1 text-sm text-[#8a9693]">
                   Preparing project progress data.
                 </p>
               </div>
@@ -380,7 +380,7 @@ export default function SCurvePage() {
               </div>
 
               <div className="min-w-0">
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] text-[#929c99]">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#929c99]">
                   Curve Interpretation
                 </p>
 
@@ -388,7 +388,7 @@ export default function SCurvePage() {
                   Current schedule position
                 </h3>
 
-                <p className="mt-2 text-xs leading-6 text-[#71807d]">
+                <p className="mt-2 text-sm leading-6 text-[#71807d]">
                   Actual progress is currently{" "}
                   <strong
                     className={
@@ -414,7 +414,7 @@ export default function SCurvePage() {
         {/* =====================================================
             FOOTER
         ===================================================== */}
-        <footer className="mt-6 flex flex-col gap-2 border-t border-[#dfe4df] pt-5 text-[9px] text-[#8a9693] sm:flex-row sm:items-center sm:justify-between sm:text-[10px]">
+        <footer className="mt-6 flex flex-col gap-2 border-t border-[#dfe4df] pt-5 text-[12px] text-[#8a9693] sm:flex-row sm:items-center sm:justify-between sm:text-sm">
           <div className="flex items-center gap-1.5">
             <CheckCircle2
               size={12}
@@ -465,7 +465,7 @@ function MetricCard({
         <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#dfe4df]" />
       </div>
 
-      <p className="mt-4 truncate text-[9px] font-semibold text-[#8b9693] sm:text-[10px]">
+      <p className="mt-4 truncate text-[12px] font-semibold text-[#8b9693] sm:text-sm">
         {label}
       </p>
 
@@ -475,7 +475,7 @@ function MetricCard({
         {value}
       </p>
 
-      <p className="mt-1 truncate text-[8px] leading-4 text-[#929c99] sm:text-[9px]">
+      <p className="mt-1 truncate text-[11px] leading-4 text-[#929c99] sm:text-[12px]">
         {description}
       </p>
     </div>
@@ -499,7 +499,7 @@ function LegendBadge({
         className={`h-1.5 w-5 rounded-full ${lineClass}`}
       />
 
-      <span className="text-[8px] font-bold text-[#71807d]">
+      <span className="text-[11px] font-bold text-[#71807d]">
         {label}
       </span>
     </div>
@@ -521,7 +521,7 @@ function ChartInsight({
 }) {
   return (
     <div className="border-b border-[#e5e9e5] px-5 py-4 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
-      <p className="text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#929c99]">
+      <p className="text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#929c99]">
         {label}
       </p>
 

@@ -155,7 +155,7 @@ export default function DashboardPage() {
         <header className="mb-6 rounded-3xl bg-[#102A2A] p-5 text-white shadow-[0_14px_40px_rgba(16,42,42,0.13)] sm:p-7 lg:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="min-w-0">
-              <div className="mb-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[1.8px] text-[#C47A44] sm:text-[10px]">
+              <div className="mb-3 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[1.8px] text-[#C47A44] sm:text-sm">
                 <Workflow size={14} />
                 Project Control Centre
               </div>
@@ -164,12 +164,12 @@ export default function DashboardPage() {
                 Project Dashboard
               </h1>
 
-              <p className="mt-2 max-w-2xl text-xs leading-5 text-white/60 sm:text-sm">
+              <p className="mt-2 max-w-2xl text-sm leading-5 text-white/60 sm:text-sm">
                 {project?.name || "Pipeline Expansion — Sector 7B"}
               </p>
 
               {project?.code && (
-                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-semibold text-white/70">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#C47A44]" />
                   {project.code}
                 </div>
@@ -179,7 +179,7 @@ export default function DashboardPage() {
             <div className="flex flex-col gap-3 lg:min-w-[310px] lg:items-end">
               <div className="flex items-center justify-between gap-3 lg:justify-end">
                 {lastUpdated && (
-                  <div className="flex items-center gap-2 text-[10px] font-medium text-[#9ec8ae]">
+                  <div className="flex items-center gap-2 text-sm font-medium text-[#9ec8ae]">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#75c08d] opacity-60" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-[#75c08d]" />
@@ -192,7 +192,7 @@ export default function DashboardPage() {
                   type="button"
                   onClick={() => fetchData(true)}
                   disabled={refreshing}
-                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-white/75 transition hover:bg-white/10 hover:text-white disabled:opacity-50"
+                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white/75 transition hover:bg-white/10 hover:text-white disabled:opacity-50"
                 >
                   <RefreshCw
                     size={14}
@@ -204,7 +204,7 @@ export default function DashboardPage() {
 
               <div className="w-full rounded-2xl border border-white/10 bg-white/5 p-4 lg:w-[310px]">
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-[1.2px] text-white/50">
+                  <span className="text-sm font-bold uppercase tracking-[1.2px] text-white/50">
                     Overall Progress
                   </span>
 
@@ -220,7 +220,7 @@ export default function DashboardPage() {
                   />
                 </div>
 
-                <div className="mt-2 flex justify-between text-[9px] text-white/40">
+                <div className="mt-2 flex justify-between text-[12px] text-white/40">
                   <span>Project completion</span>
                   <span>100%</span>
                 </div>
@@ -276,7 +276,7 @@ export default function DashboardPage() {
             <div className="border-b border-[#eceeeb] px-4 py-5 sm:px-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className="mb-2 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[1.5px] text-[#C47A44]">
+                  <div className="mb-2 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[1.5px] text-[#C47A44]">
                     <Workflow size={13} />
                     Work Breakdown
                   </div>
@@ -285,7 +285,7 @@ export default function DashboardPage() {
                     Phase Progress Rollup
                   </h2>
 
-                  <p className="mt-1 text-[11px] text-[#7a8582] sm:text-xs">
+                  <p className="mt-1 text-sm text-[#7a8582] sm:text-sm">
                     Live progress across Level 2 project phases
                   </p>
                 </div>
@@ -320,17 +320,17 @@ export default function DashboardPage() {
                         <div className="mb-2 flex items-end justify-between gap-3">
                           <div className="min-w-0">
                             <div className="flex items-center gap-2">
-                              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#f2f4f2] text-[9px] font-bold text-[#6b7673]">
+                              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[#f2f4f2] text-[12px] font-bold text-[#6b7673]">
                                 {String(index + 1).padStart(2, "0")}
                               </span>
 
-                              <p className="truncate text-xs font-bold text-[#35413f] sm:text-sm">
+                              <p className="truncate text-sm font-bold text-[#35413f] sm:text-sm">
                                 {node.code} - {node.name}
                               </p>
                             </div>
                           </div>
 
-                          <span className="shrink-0 text-xs font-bold text-[#24302F]">
+                          <span className="shrink-0 text-sm font-bold text-[#24302F]">
                             {progress.toFixed(1)}%
                           </span>
                         </div>
@@ -342,7 +342,7 @@ export default function DashboardPage() {
                           />
                         </div>
 
-                        <div className="ml-8 mt-1.5 flex justify-between text-[9px] text-[#9aa39f]">
+                        <div className="ml-8 mt-1.5 flex justify-between text-[12px] text-[#9aa39f]">
                           <span>
                             {progress >= 100
                               ? "Completed"
@@ -361,7 +361,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="border-t border-[#eceeeb] bg-[#fafbf9] px-4 py-3 sm:px-6">
-              <div className="flex items-center justify-between text-[10px] font-semibold text-[#7d8784]">
+              <div className="flex items-center justify-between text-sm font-semibold text-[#7d8784]">
                 <span>Total phases</span>
                 <span className="text-[#24302F]">
                   {l2Nodes.length}
@@ -375,7 +375,7 @@ export default function DashboardPage() {
             <div className="border-b border-[#eceeeb] px-4 py-5 sm:px-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className="mb-2 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[1.5px] text-[#C47A44]">
+                  <div className="mb-2 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[1.5px] text-[#C47A44]">
                     <Camera size={13} />
                     Field Activity
                   </div>
@@ -384,7 +384,7 @@ export default function DashboardPage() {
                     Recent Field Evidence
                   </h2>
 
-                  <p className="mt-1 text-[11px] text-[#7a8582] sm:text-xs">
+                  <p className="mt-1 text-sm text-[#7a8582] sm:text-sm">
                     Latest submissions received from the field
                   </p>
                 </div>
@@ -419,25 +419,25 @@ export default function DashboardPage() {
 
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <p className="truncate text-xs font-bold text-[#35413f] sm:text-sm">
+                          <p className="truncate text-sm font-bold text-[#35413f] sm:text-sm">
                             {sub.wbs_node_name || "Activity Update"}
                           </p>
 
                           {sub.gps_lat && (
-                            <span className="hidden shrink-0 items-center gap-1 rounded-full bg-[#edf7f0] px-2 py-1 text-[8px] font-bold text-[#43815a] sm:flex">
+                            <span className="hidden shrink-0 items-center gap-1 rounded-full bg-[#edf7f0] px-2 py-1 text-[11px] font-bold text-[#43815a] sm:flex">
                               <ShieldCheck size={10} />
                               Verified
                             </span>
                           )}
                         </div>
 
-                        <p className="mt-1 flex items-center gap-1.5 text-[9px] text-[#8a9491] sm:text-[10px]">
+                        <p className="mt-1 flex items-center gap-1.5 text-[12px] text-[#8a9491] sm:text-sm">
                           <Clock3 size={11} />
                           {new Date(sub.captured_at).toLocaleString()}
                         </p>
 
                         {sub.gps_lat && (
-                          <span className="mt-1 flex items-center gap-1 text-[9px] text-[#9aa39f] sm:hidden">
+                          <span className="mt-1 flex items-center gap-1 text-[12px] text-[#9aa39f] sm:hidden">
                             <MapPin size={10} />
                             GPS Verified
                           </span>
@@ -450,7 +450,7 @@ export default function DashboardPage() {
                             +{sub.pct_complete}%
                           </p>
 
-                          <p className="text-[8px] font-semibold uppercase tracking-wide text-[#9aa39f]">
+                          <p className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39f]">
                             Progress
                           </p>
                         </div>
@@ -467,7 +467,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="border-t border-[#eceeeb] bg-[#fafbf9] px-4 py-3 sm:px-6">
-              <div className="flex items-center justify-between text-[10px] font-semibold text-[#7d8784]">
+              <div className="flex items-center justify-between text-sm font-semibold text-[#7d8784]">
                 <span>Showing latest submissions</span>
                 <span className="text-[#24302F]">
                   {subs.length}
@@ -504,7 +504,7 @@ export default function DashboardPage() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-[#e1e4e1] py-5 text-center text-[9px] text-[#909996] sm:text-[10px]">
+        <footer className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-[#e1e4e1] py-5 text-center text-[12px] text-[#909996] sm:text-sm">
           <span className="font-bold text-[#68364B]">
             FieldSync
           </span>
@@ -555,7 +555,7 @@ function MetricCard({
       </div>
 
       <div className="mt-4">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.8px] text-[#7d8784]">
+        <p className="text-sm font-semibold uppercase tracking-[0.8px] text-[#7d8784]">
           {label}
         </p>
 
@@ -563,7 +563,7 @@ function MetricCard({
           {value}
         </p>
 
-        <p className="mt-1 text-[9px] font-medium text-[#9aa39f] sm:text-[10px]">
+        <p className="mt-1 text-[12px] font-medium text-[#9aa39f] sm:text-sm">
           {detail}
         </p>
       </div>
@@ -606,7 +606,7 @@ function HealthItem({
       </div>
 
       <div className="min-w-0 flex-1">
-        <p className="truncate text-[10px] font-semibold uppercase tracking-[0.7px] text-[#7d8784]">
+        <p className="truncate text-sm font-semibold uppercase tracking-[0.7px] text-[#7d8784]">
           {label}
         </p>
       </div>

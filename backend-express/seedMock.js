@@ -10,6 +10,7 @@ async function seedMockData() {
     // Nuke everything
     console.log("Cleaning up old data...");
     await client.query('DELETE FROM ai_suggestions');
+    await client.query('DELETE FROM media_files');
     await client.query('DELETE FROM submissions');
     await client.query('DELETE FROM rollup_cache');
     await client.query('DELETE FROM wbs_nodes');
@@ -182,6 +183,30 @@ async function seedMockData() {
         `INSERT INTO ai_suggestions (submission_id, suggested_pct_complete, suggested_notes, confidence, status) VALUES ($1,$2,$3,$4,$5)`,
         [girdSub, 30, 'Girder erection imagery shows 2 of 6 spans fully landed — estimated 30%.', 0.93, 'PENDING']
       );
+      
+      // ── Media Files ──
+      await client.query(`DELETE FROM media_files`);
+      // Add photos to some submissions
+      const addMedia = async (subId, type, path, name) => {
+          await client.query(
+              `INSERT INTO media_files (submission_id, media_type, storage_path, file_name, mime_type) 
+               VALUES ($1, $2, $3, $4, $5)`,
+              [subId, type, path, name, type === 'photo' ? 'image/jpeg' : 'audio/mp4']
+          );
+      };
+      
+      await addMedia(elecSub2, 'photo', 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=400&q=80', 'site-cable.jpg');
+      await addMedia(pileSub2, 'photo', 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=400&q=80', 'pier2-piling.jpg');
+      await addMedia(girdSub, 'photo', 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80', 'girder-spans.jpg');
+      
+      // Add some multiple medias and audio to another submission
+      const excSub1 = await client.query('SELECT id FROM submissions WHERE wbs_node_id = $1 LIMIT 1', [p1_exc]);
+      if (excSub1.rows.length > 0) {
+          const subId = excSub1.rows[0].id;
+          await addMedia(subId, 'photo', 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&q=80', 'excavation1.jpg');
+          await addMedia(subId, 'photo', 'https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=400&q=80', 'excavation2.jpg');
+          await addMedia(subId, 'audio', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'field-notes.mp3');
+      }
 
       leafSubs.push(
         // Project 1 leaves

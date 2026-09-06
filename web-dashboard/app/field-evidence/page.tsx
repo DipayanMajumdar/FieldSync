@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   Activity,
@@ -13,13 +13,21 @@ import {
   TriangleAlert,
 } from "lucide-react";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, Fragment } from "react";
 import { getSubmissions } from "@/lib/api";
 
 export default function FieldEvidencePage() {
   const [subs, setSubs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [expandedRows, setExpandedRows] = useState<Record<string, boolean>>({});
+
+  const toggleRow = (id: string) => {
+    setExpandedRows((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   useEffect(() => {
     getSubmissions()
@@ -95,7 +103,7 @@ export default function FieldEvidencePage() {
                   <Camera size={14} />
                 </div>
 
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                <span className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                   Field Operations
                 </span>
               </div>
@@ -104,13 +112,13 @@ export default function FieldEvidencePage() {
                 Field Evidence
               </h1>
 
-              <p className="mt-2 max-w-xl text-xs leading-6 text-[#aab7b4] sm:text-sm">
+              <p className="mt-2 max-w-xl text-sm leading-6 text-[#aab7b4] sm:text-sm">
                 Review field submissions, progress updates,
                 captured locations and synchronization status.
               </p>
             </div>
 
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/[0.09] bg-white/[0.05] px-3 py-2 text-[9px] font-semibold text-[#c4cecb]">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/[0.09] bg-white/[0.05] px-3 py-2 text-[12px] font-semibold text-[#c4cecb]">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#6da98d] opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#6da98d]" />
@@ -127,7 +135,7 @@ export default function FieldEvidencePage() {
         <section className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           <div className="rounded-[18px] border border-[#dfe2de] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
                 Submissions
               </span>
 
@@ -140,14 +148,14 @@ export default function FieldEvidencePage() {
               {loading ? "—" : subs.length}
             </p>
 
-            <p className="mt-1 text-[9px] text-[#8b9693]">
+            <p className="mt-1 text-[12px] text-[#8b9693]">
               Field records received
             </p>
           </div>
 
           <div className="rounded-[18px] border border-[#dfe2de] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
                 Synced
               </span>
 
@@ -160,14 +168,14 @@ export default function FieldEvidencePage() {
               {loading ? "—" : syncedCount}
             </p>
 
-            <p className="mt-1 text-[9px] text-[#8b9693]">
+            <p className="mt-1 text-[12px] text-[#8b9693]">
               Successfully synchronized
             </p>
           </div>
 
           <div className="rounded-[18px] border border-[#dfe2de] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
                 Avg. Progress
               </span>
 
@@ -182,14 +190,14 @@ export default function FieldEvidencePage() {
                 : `${averageProgress.toFixed(0)}%`}
             </p>
 
-            <p className="mt-1 text-[9px] text-[#8b9693]">
+            <p className="mt-1 text-[12px] text-[#8b9693]">
               Across submitted evidence
             </p>
           </div>
 
           <div className="rounded-[18px] border border-[#eadede] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#8b9693]">
                 Pending
               </span>
 
@@ -202,7 +210,7 @@ export default function FieldEvidencePage() {
               {loading ? "—" : pendingCount}
             </p>
 
-            <p className="mt-1 text-[9px] text-[#8b9693]">
+            <p className="mt-1 text-[12px] text-[#8b9693]">
               Awaiting synchronization
             </p>
           </div>
@@ -217,12 +225,12 @@ export default function FieldEvidencePage() {
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c47a44]" />
 
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] text-[#8b9693]">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#8b9693]">
                   Evidence Registry
                 </p>
               </div>
 
-              <p className="mt-1 text-xs font-bold text-[#35413f]">
+              <p className="mt-1 text-sm font-bold text-[#35413f]">
                 Captured field submissions
               </p>
             </div>
@@ -240,7 +248,7 @@ export default function FieldEvidencePage() {
                   setSearch(e.target.value)
                 }
                 placeholder="Search evidence..."
-                className="h-10 w-full rounded-xl border border-[#e2e5e2] bg-[#f8f9f7] pl-10 pr-4 text-[10px] text-[#35413f] outline-none transition placeholder:text-[#9aa3a0] focus:border-[#68364b] focus:bg-white focus:ring-4 focus:ring-[#68364b]/[0.06]"
+                className="h-10 w-full rounded-xl border border-[#e2e5e2] bg-[#f8f9f7] pl-10 pr-4 text-sm text-[#35413f] outline-none transition placeholder:text-[#9aa3a0] focus:border-[#68364b] focus:bg-white focus:ring-4 focus:ring-[#68364b]/[0.06]"
               />
             </div>
           </div>
@@ -262,7 +270,7 @@ export default function FieldEvidencePage() {
               Loading field evidence...
             </p>
 
-            <p className="mt-1 text-[10px] text-[#8b9693]">
+            <p className="mt-1 text-sm text-[#8b9693]">
               Fetching the latest field submissions.
             </p>
           </section>
@@ -281,7 +289,7 @@ export default function FieldEvidencePage() {
               No field evidence found
             </p>
 
-            <p className="mt-1 text-[10px] text-[#8b9693]">
+            <p className="mt-1 text-sm text-[#8b9693]">
               No submissions match the current search.
             </p>
           </section>
@@ -295,11 +303,11 @@ export default function FieldEvidencePage() {
             {/* TABLE HEADER */}
             <div className="flex flex-col gap-2 border-b border-[#e6e9e6] bg-white px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
               <div>
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] text-[#8b9693]">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#8b9693]">
                   Submission Activity
                 </p>
 
-                <p className="mt-1 text-xs font-bold text-[#35413f]">
+                <p className="mt-1 text-sm font-bold text-[#35413f]">
                   {filteredSubs.length} evidence record
                   {filteredSubs.length !== 1
                     ? "s"
@@ -307,7 +315,7 @@ export default function FieldEvidencePage() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-1.5 text-[9px] text-[#8b9693]">
+              <div className="flex items-center gap-1.5 text-[12px] text-[#8b9693]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#4c7565]" />
                 Live field records
               </div>
@@ -318,27 +326,27 @@ export default function FieldEvidencePage() {
               <table className="w-full min-w-[1000px] text-left">
                 <thead>
                   <tr className="border-b border-[#e4e7e4] bg-[#f7f8f6]">
-                    <th className="px-4 py-3 text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Activity
                     </th>
 
-                    <th className="px-4 py-3 text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Progress
                     </th>
 
-                    <th className="px-4 py-3 text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Notes
                     </th>
 
-                    <th className="px-4 py-3 text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Location
                     </th>
 
-                    <th className="px-4 py-3 text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Sync Status
                     </th>
 
-                    <th className="px-4 py-3 text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Captured At
                     </th>
                   </tr>
@@ -346,128 +354,129 @@ export default function FieldEvidencePage() {
 
                 <tbody>
                   {filteredSubs.map((s) => {
-                    const progress = Math.min(
-                      100,
-                      Math.max(
-                        0,
-                        Number(s.pct_complete || 0)
-                      )
-                    );
-
-                    const syncStatus =
-                      s.sync_status || "SYNCED";
-
-                    const isSynced =
-                      String(syncStatus).toUpperCase() ===
-                      "SYNCED";
+                    const progress = Math.min(100, Math.max(0, Number(s.pct_complete || 0)));
+                    const syncStatus = s.sync_status || "SYNCED";
+                    const isSynced = String(syncStatus).toUpperCase() === "SYNCED";
+                    
+                    const isExpanded = !!expandedRows[s.id];
+                    const medias = Array.isArray(s.media_files) ? s.media_files.filter((m: any) => m !== null) : [];
+                    const photoMedia = medias.find((m: any) => m.media_type === 'photo');
 
                     return (
-                      <tr
-                        key={s.id}
-                        className="group border-b border-[#ecefed] transition-colors last:border-b-0 hover:bg-[#fafbf9]"
-                      >
-                        {/* ACTIVITY */}
-                        <td className="px-4 py-4">
-                          <div className="flex items-center gap-3">
-                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#f2e8ec] text-[#68364b] transition group-hover:bg-[#68364b] group-hover:text-white">
-                              <Activity size={15} />
+                      <Fragment key={s.id}>
+                        <tr
+                          onClick={() => toggleRow(s.id)}
+                          className="group border-b border-[#ecefed] cursor-pointer transition-colors last:border-b-0 hover:bg-[#fafbf9]"
+                        >
+                          {/* ACTIVITY */}
+                          <td className="px-4 py-4">
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#f2e8ec] text-[#68364b] transition overflow-hidden">
+                                {photoMedia ? (
+                                  <img src={photoMedia.storage_path} alt="Evidence" className="h-full w-full object-cover" />
+                                ) : (
+                                  <Activity size={15} className="group-hover:text-white" />
+                                )}
+                              </div>
+
+                              <div className="min-w-0">
+                                <p className="max-w-[220px] truncate text-sm font-bold text-[#35413f]">
+                                  {s.wbs_node_name || "Unknown Node"}
+                                </p>
+                                <p className="mt-0.5 text-[11px] text-[#9aa3a0]">
+                                  {medias.length} field attachments
+                                </p>
+                              </div>
                             </div>
+                          </td>
 
-                            <div className="min-w-0">
-                              <p className="max-w-[220px] truncate text-[10px] font-bold text-[#35413f]">
-                                {s.wbs_node_name ||
-                                  "Unknown Node"}
-                              </p>
-
-                              <p className="mt-0.5 text-[8px] text-[#9aa3a0]">
-                                Field submission
-                              </p>
+                          {/* PROGRESS */}
+                          <td className="px-4 py-4">
+                            <div className="flex min-w-[130px] items-center gap-2.5">
+                              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#e5e8e5]">
+                                <div className="h-full rounded-full bg-[#68364b]" style={{ width: `${progress}%` }} />
+                              </div>
+                              <span className="w-9 text-right text-sm font-extrabold text-[#35413f]">{progress}%</span>
                             </div>
-                          </div>
-                        </td>
+                          </td>
 
-                        {/* PROGRESS */}
-                        <td className="px-4 py-4">
-                          <div className="flex min-w-[130px] items-center gap-2.5">
-                            <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#e5e8e5]">
-                              <div
-                                className="h-full rounded-full bg-[#68364b]"
-                                style={{
-                                  width: `${progress}%`,
-                                }}
-                              />
-                            </div>
+                          {/* NOTES */}
+                          <td className="max-w-[260px] px-4 py-4">
+                            <p className="truncate text-sm text-[#697572]" title={s.notes || ""}>{s.notes || "-"}</p>
+                          </td>
 
-                            <span className="w-9 text-right text-[10px] font-extrabold text-[#35413f]">
-                              {progress}%
-                            </span>
-                          </div>
-                        </td>
-
-                        {/* NOTES */}
-                        <td className="max-w-[260px] px-4 py-4">
-                          <p
-                            className="truncate text-[10px] text-[#697572]"
-                            title={s.notes || ""}
-                          >
-                            {s.notes || "—"}
-                          </p>
-                        </td>
-
-                        {/* LOCATION */}
-                        <td className="px-4 py-4">
-                          {s.gps_lat && s.gps_lng ? (
-                            <a
-                              href={`https://maps.google.com/?q=${s.gps_lat},${s.gps_lng}`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 rounded-lg border border-[#dfe4e1] bg-[#f7f9f7] px-2.5 py-1.5 text-[9px] font-bold text-[#496c64] transition hover:border-[#b9cbc3] hover:bg-[#eef5f1]"
-                            >
-                              <MapPin size={11} />
-                              View Map
-                            </a>
-                          ) : (
-                            <span className="text-[9px] text-[#9aa3a0]">
-                              —
-                            </span>
-                          )}
-                        </td>
-
-                        {/* SYNC */}
-                        <td className="px-4 py-4">
-                          <span
-                            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[8px] font-extrabold tracking-wide ${
-                              isSynced
-                                ? "border-[#d5e8dc] bg-[#eef7f1] text-[#47745e]"
-                                : "border-[#f0dcc7] bg-[#fff5e9] text-[#a85f2e]"
-                            }`}
-                          >
-                            {isSynced ? (
-                              <CheckCircle2 size={10} />
+                          {/* LOCATION */}
+                          <td className="px-4 py-4">
+                            {s.gps_lat && s.gps_lng ? (
+                              <a
+                                href={`https://maps.google.com/?q=${s.gps_lat},${s.gps_lng}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center gap-1.5 rounded-lg border border-[#dfe4e1] bg-[#f7f9f7] px-2.5 py-1.5 text-[12px] font-bold text-[#496c64] transition hover:border-[#b9cbc3] hover:bg-[#eef5f1]"
+                              >
+                                <MapPin size={11} />
+                                View Map
+                              </a>
                             ) : (
-                              <Clock3 size={10} />
+                              <span className="text-[12px] text-[#9aa3a0]">-</span>
                             )}
+                          </td>
 
-                            {String(syncStatus).toUpperCase()}
-                          </span>
-                        </td>
+                          {/* SYNC */}
+                          <td className="px-4 py-4">
+                            <span
+                              className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-extrabold tracking-wide ${
+                                isSynced ? "border-[#d5e8dc] bg-[#eef7f1] text-[#47745e]" : "border-[#f0dcc7] bg-[#fff5e9] text-[#a85f2e]"
+                              }`}
+                            >
+                              {isSynced ? <CheckCircle2 size={10} /> : <Clock3 size={10} />}
+                              {String(syncStatus).toUpperCase()}
+                            </span>
+                          </td>
 
-                        {/* CAPTURED */}
-                        <td className="whitespace-nowrap px-4 py-4">
-                          <div className="flex items-center gap-1.5 text-[9px] font-medium text-[#788380]">
-                            <Clock3
-                              size={11}
-                              className="text-[#9aa3a0]"
-                            />
+                          {/* CAPTURED */}
+                          <td className="whitespace-nowrap px-4 py-4">
+                            <div className="flex items-center gap-1.5 text-[12px] font-medium text-[#788380]">
+                              <Clock3 size={11} className="text-[#9aa3a0]" />
+                              {s.captured_at ? new Date(s.captured_at).toLocaleString() : "-"}
+                            </div>
+                          </td>
+                        </tr>
 
-                            {s.captured_at
-                              ? new Date(
-                                  s.captured_at
-                                ).toLocaleString()
-                              : "—"}
-                          </div>
-                        </td>
-                      </tr>
+                        {isExpanded && medias.length > 0 && (
+                          <tr className="bg-gray-50 border-b border-[#ecefed]">
+                            <td colSpan={6} className="px-6 py-4">
+                              <div className="flex flex-wrap gap-4">
+                                {medias.map((media: any) => (
+                                  <div key={media.id} className="border border-gray-200 bg-white p-2 rounded-xl shadow-sm w-48">
+                                    {media.media_type === 'photo' ? (
+                                      <div className="w-full h-32 rounded-lg overflow-hidden bg-gray-100">
+                                        <img src={media.storage_path} alt={media.file_name} className="w-full h-full object-cover" />
+                                      </div>
+                                    ) : media.media_type === 'audio' ? (
+                                      <div className="w-full h-32 rounded-lg flex flex-col items-center justify-center bg-gray-100">
+                                        <div className="h-10 w-10 bg-[#68364b] rounded-full flex items-center justify-center text-white mb-2">
+                                          <Activity size={20} />
+                                        </div>
+                                        <audio controls src={media.storage_path} className="w-40 h-8 text-[11px]" />
+                                      </div>
+                                    ) : (
+                                      <div className="w-full h-32 rounded-lg flex flex-col items-center justify-center bg-gray-100 text-gray-500">
+                                        <FileCheck2 size={24} className="mb-2" />
+                                        <span className="text-[11px] font-medium">{media.file_name}</span>
+                                      </div>
+                                    )}
+                                    <div className="mt-2 text-center text-[11px] font-semibold text-gray-600 truncate" title={media.file_name}>
+                                      {media.file_name}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </Fragment>
                     );
                   })}
                 </tbody>
@@ -476,7 +485,7 @@ export default function FieldEvidencePage() {
 
             {/* TABLE FOOTER */}
             <div className="flex flex-col gap-3 border-t border-[#e6e9e6] bg-[#fafbf9] px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5">
-              <div className="flex items-center gap-2 text-[9px] text-[#8b9693]">
+              <div className="flex items-center gap-2 text-[12px] text-[#8b9693]">
                 <ShieldCheck
                   size={12}
                   className="text-[#4c7565]"
@@ -485,7 +494,7 @@ export default function FieldEvidencePage() {
                 records
               </div>
 
-              <div className="flex items-center gap-1.5 text-[9px] font-medium text-[#8b9693]">
+              <div className="flex items-center gap-1.5 text-[12px] font-medium text-[#8b9693]">
                 <RefreshCw size={11} />
                 {filteredSubs.length} visible records
               </div>
@@ -494,7 +503,7 @@ export default function FieldEvidencePage() {
         )}
 
         {/* FOOTER */}
-        <footer className="mt-7 flex flex-col items-center justify-between gap-2 border-t border-[#dfe2de] py-5 text-[9px] text-[#8a9491] sm:flex-row sm:text-[10px]">
+        <footer className="mt-7 flex flex-col items-center justify-between gap-2 border-t border-[#dfe2de] py-5 text-[12px] text-[#8a9491] sm:flex-row sm:text-sm">
           <p className="font-medium">
             FieldSync Project Management
           </p>

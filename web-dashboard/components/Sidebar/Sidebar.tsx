@@ -252,7 +252,7 @@ export default function Sidebar({
           className="group flex items-center gap-3"
           title="FieldSync"
         >
-          <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-[#68364B] text-xs font-extrabold shadow-lg shadow-black/20 transition-transform duration-200 group-hover:scale-105">
+          <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-[#68364B] text-sm font-extrabold shadow-lg shadow-black/20 transition-transform duration-200 group-hover:scale-105">
             <span className="relative z-10">FS</span>
             <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C47A44]" />
           </div>
@@ -314,7 +314,7 @@ export default function Sidebar({
             className="group flex items-center"
             title="FieldSync"
           >
-            <div className="relative flex h-[42px] w-[42px] shrink-0 items-center justify-center overflow-hidden rounded-[13px] bg-[#68364B] text-[13px] font-extrabold shadow-lg shadow-black/20 transition-transform duration-200 group-hover:scale-105">
+            <div className="relative flex h-[42px] w-[42px] shrink-0 items-center justify-center overflow-hidden rounded-[13px] bg-[#68364B] text-sm font-extrabold shadow-lg shadow-black/20 transition-transform duration-200 group-hover:scale-105">
               <span className="relative z-10">FS</span>
               <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C47A44]" />
             </div>
@@ -341,17 +341,17 @@ export default function Sidebar({
           <div className="mx-3 mt-4 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-3">
             <div className="flex items-center gap-2.5">
               <div
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[10px] font-extrabold text-white ${getRoleColor()}`}
+                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold text-white ${getRoleColor()}`}
               >
                 {getInitials()}
               </div>
 
               <div className="min-w-0">
-                <p className="truncate text-[11px] font-semibold text-white">
+                <p className="truncate text-sm font-semibold text-white">
                   {user?.name || getRoleLabel()}
                 </p>
 
-                <div className="mt-0.5 flex items-center gap-1 text-[9px] text-[#81908D]">
+                <div className="mt-0.5 flex items-center gap-1 text-[12px] text-[#81908D]">
                   {getRoleIcon()}
                   <span className="truncate">{getRoleDescription()}</span>
                 </div>
@@ -374,7 +374,7 @@ export default function Sidebar({
         >
           {!collapsed && (
             <div className="mb-3 flex items-center justify-between px-3">
-              <p className="text-[9px] font-bold tracking-[1.5px] text-[#71807D]">
+              <p className="text-[12px] font-bold tracking-[1.5px] text-[#71807D]">
                 WORKSPACE
               </p>
 
@@ -433,7 +433,7 @@ export default function Sidebar({
 
                   {!collapsed && (
                     <>
-                      <span className="ml-3 whitespace-nowrap text-[12px] font-semibold">
+                      <span className="ml-3 whitespace-nowrap text-sm font-semibold">
                         {item.label}
                       </span>
 
@@ -442,7 +442,7 @@ export default function Sidebar({
                           className={`
                             ml-auto flex h-[21px] min-w-[22px] items-center
                             justify-center rounded-full px-1.5
-                            text-[9px] font-extrabold
+                            text-[12px] font-extrabold
                             ${
                               active
                                 ? "bg-[#C47A44] text-white"
@@ -457,7 +457,7 @@ export default function Sidebar({
                   )}
 
                   {collapsed && item.badge && (
-                    <span className="absolute right-0 top-1 flex h-[17px] min-w-[17px] items-center justify-center rounded-full border-2 border-[#102A2A] bg-[#C47A44] px-1 text-[8px] font-extrabold text-white">
+                    <span className="absolute right-0 top-1 flex h-[17px] min-w-[17px] items-center justify-center rounded-full border-2 border-[#102A2A] bg-[#C47A44] px-1 text-[11px] font-extrabold text-white">
                       {item.badge}
                     </span>
                   )}
@@ -468,7 +468,7 @@ export default function Sidebar({
 
           {/* No user loaded state */}
           {!collapsed && !role && (
-            <div className="mx-1 mt-4 rounded-xl border border-white/[0.06] bg-white/[0.025] px-3 py-3 text-[10px] leading-4 text-[#71807D]">
+            <div className="mx-1 mt-4 rounded-xl border border-white/[0.06] bg-white/[0.025] px-3 py-3 text-sm leading-4 text-[#71807D]">
               Loading workspace...
             </div>
           )}
@@ -514,7 +514,7 @@ export default function Sidebar({
               </span>
 
               {!collapsed && (
-                <span className="ml-3 text-[12px] font-semibold">
+                <span className="ml-3 text-sm font-semibold">
                   Settings
                 </span>
               )}
@@ -532,18 +532,18 @@ export default function Sidebar({
               `}
             >
               <div
-                className={`flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-[10px] text-[10px] font-extrabold text-white ${getRoleColor()}`}
+                className={`flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-[10px] text-sm font-extrabold text-white ${getRoleColor()}`}
               >
                 {getInitials()}
               </div>
 
               {!collapsed && (
                 <div className="ml-2.5 min-w-0 flex-1">
-                  <div className="truncate text-[11px] font-semibold text-white">
+                  <div className="truncate text-sm font-semibold text-white">
                     {user?.name || getRoleLabel()}
                   </div>
 
-                  <div className="mt-0.5 flex items-center gap-1 text-[9px] text-[#71807D]">
+                  <div className="mt-0.5 flex items-center gap-1 text-[12px] text-[#71807D]">
                     {getRoleIcon()}
                     <span className="truncate">
                       {getRoleDescription()}
@@ -569,7 +569,7 @@ export default function Sidebar({
             <LogOut size={15} />
 
             {!collapsed && (
-              <span className="text-[10px] font-semibold">Sign Out</span>
+              <span className="text-sm font-semibold">Sign Out</span>
             )}
           </button>
 
@@ -591,7 +591,7 @@ export default function Sidebar({
               <>
                 <ChevronLeft size={17} />
 
-                <span className="text-[10px] font-semibold">
+                <span className="text-sm font-semibold">
                   Collapse Menu
                 </span>
               </>

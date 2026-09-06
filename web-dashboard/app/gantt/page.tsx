@@ -503,7 +503,7 @@ export default function GanttPage() {
                   <CalendarDays size={14} />
                 </div>
 
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                <span className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                   Planning & Execution
                 </span>
               </div>
@@ -514,13 +514,13 @@ export default function GanttPage() {
                 </h1>
 
                 {!loading && (
-                  <span className="rounded-full border border-white/10 bg-white/[0.07] px-2.5 py-1 text-[9px] font-bold text-[#c7d1ce]">
+                  <span className="rounded-full border border-white/10 bg-white/[0.07] px-2.5 py-1 text-[12px] font-bold text-[#c7d1ce]">
                     {stats.total} activities
                   </span>
                 )}
               </div>
 
-              <p className="mt-2 max-w-2xl text-xs leading-6 text-[#aebbb7] sm:text-sm">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#aebbb7] sm:text-sm">
                 Visualize planned activity timelines, progress
                 and execution status across the project.
               </p>
@@ -530,7 +530,7 @@ export default function GanttPage() {
               <button
                 onClick={() => fetchData(true)}
                 disabled={refreshing}
-                className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-xs font-semibold text-white transition hover:bg-white/[0.09] disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.09] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <RefreshCw
                   size={14}
@@ -543,7 +543,7 @@ export default function GanttPage() {
 
               <button
                 onClick={() => router.push("/dashboard")}
-                className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-xs font-semibold text-[#24302f] transition hover:bg-[#f4f1ef]"
+                className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-[#24302f] transition hover:bg-[#f4f1ef]"
               >
                 <ArrowLeft size={14} />
                 Dashboard
@@ -600,7 +600,7 @@ export default function GanttPage() {
               <button
                 key={item}
                 onClick={() => setFilter(item)}
-                className={`whitespace-nowrap rounded-lg px-3 py-2 text-[10px] font-bold transition sm:px-4 sm:text-xs ${
+                className={`whitespace-nowrap rounded-lg px-3 py-2 text-sm font-bold transition sm:px-4 sm:text-sm ${
                   filter === item
                     ? "bg-[#68364b] text-white shadow-sm"
                     : "text-[#697572] hover:bg-white hover:text-[#24302f]"
@@ -611,14 +611,14 @@ export default function GanttPage() {
             ))}
           </div>
 
-          <div className="flex items-center justify-between gap-3 px-1 text-[10px] font-semibold text-[#7b8582] sm:px-2 sm:text-xs">
+          <div className="flex items-center justify-between gap-3 px-1 text-sm font-semibold text-[#7b8582] sm:px-2 sm:text-sm">
             <div className="flex items-center gap-2">
               <CalendarDays size={14} />
               <span>{dateRangeStr}</span>
             </div>
 
             {lastUpdated && (
-              <span className="hidden text-[9px] text-[#a0a8a5] xl:block">
+              <span className="hidden text-[12px] text-[#a0a8a5] xl:block">
                 Updated{" "}
                 {lastUpdated.toLocaleTimeString("en-IN", {
                   hour: "2-digit",
@@ -635,7 +635,7 @@ export default function GanttPage() {
         <section className="overflow-hidden rounded-[22px] border border-[#dfe4df] bg-white shadow-[0_10px_35px_rgba(36,48,47,0.045)]">
           <div className="flex flex-col gap-3 border-b border-[#e5e9e5] px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-[8px] font-extrabold uppercase tracking-[0.16em] text-[#c47a44]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c47a44]">
                 Project Schedule
               </p>
 
@@ -643,13 +643,13 @@ export default function GanttPage() {
                 Project Timeline
               </h2>
 
-              <p className="mt-1 text-[10px] leading-5 text-[#71807d] sm:text-xs">
+              <p className="mt-1 text-sm leading-5 text-[#71807d] sm:text-sm">
                 Click an activity bar to view its live progress
                 information.
               </p>
             </div>
 
-            <div className="flex items-center gap-2 text-[9px] font-semibold text-[#8a9390]">
+            <div className="flex items-center gap-2 text-[12px] font-semibold text-[#8a9390]">
               <CircleDot size={12} className="text-[#68364b]" />
               Live WBS schedule
             </div>
@@ -673,11 +673,11 @@ export default function GanttPage() {
                     {/* Header */}
                     <div className="h-[82px] border-b border-[#dfe4df] bg-[#f7f8f6] px-4 py-3">
                       <div className="flex h-full flex-col justify-end">
-                        <span className="text-[9px] font-extrabold uppercase tracking-[0.15em] text-[#89938f]">
+                        <span className="text-[12px] font-extrabold uppercase tracking-[0.15em] text-[#89938f]">
                           Work Breakdown
                         </span>
 
-                        <span className="mt-2 text-[9px] font-semibold text-[#a0a8a5]">
+                        <span className="mt-2 text-[12px] font-semibold text-[#a0a8a5]">
                           Activity
                         </span>
                       </div>
@@ -702,7 +702,7 @@ export default function GanttPage() {
                                 : "hover:bg-[#fafbf9]"
                             }`}
                           >
-                            <div className="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f3e9ed] text-[9px] font-extrabold text-[#68364b]">
+                            <div className="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f3e9ed] text-[12px] font-extrabold text-[#68364b]">
                               {String(index + 1).padStart(
                                 2,
                                 "0"
@@ -711,14 +711,14 @@ export default function GanttPage() {
 
                             <div className="min-w-0 flex-1">
                               <div className="flex items-center gap-2">
-                                <span className="truncate text-xs font-bold text-[#283432]">
+                                <span className="truncate text-sm font-bold text-[#283432]">
                                   {node.name ||
                                     "Unnamed Activity"}
                                 </span>
                               </div>
 
                               <div className="mt-1 flex items-center gap-2">
-                                <span className="font-mono text-[8px] uppercase tracking-wide text-[#9aa29f]">
+                                <span className="font-mono text-[11px] uppercase tracking-wide text-[#9aa29f]">
                                   {node.code || "—"}
                                 </span>
 
@@ -744,7 +744,7 @@ export default function GanttPage() {
                       {months.map((month) => (
                         <div
                           key={`${month.label}-${month.startIndex}`}
-                          className="flex shrink-0 items-center justify-center border-r border-[#e5e9e5] text-[10px] font-extrabold text-[#5f6b68]"
+                          className="flex shrink-0 items-center justify-center border-r border-[#e5e9e5] text-sm font-extrabold text-[#5f6b68]"
                           style={{
                             width: `${(month.days / totalDays) * 100}%`,
                           }}
@@ -760,7 +760,7 @@ export default function GanttPage() {
                         (date, index) => (
                           <div
                             key={index}
-                            className="flex min-w-[30px] flex-1 items-center justify-center border-r border-[#e8ece9] text-[8px] font-semibold text-[#8d9693]"
+                            className="flex min-w-[30px] flex-1 items-center justify-center border-r border-[#e8ece9] text-[11px] font-semibold text-[#8d9693]"
                           >
                             {date.getDate()}
                           </div>
@@ -835,7 +835,7 @@ export default function GanttPage() {
                                 />
 
                                 <div className="relative z-10 flex h-full items-center justify-between gap-2 px-2.5">
-                                  <span className="truncate text-[9px] font-extrabold text-white sm:text-[10px]">
+                                  <span className="truncate text-[12px] font-extrabold text-white sm:text-sm">
                                     {progress > 0
                                       ? `${Math.round(progress)}%`
                                       : "0%"}
@@ -843,7 +843,7 @@ export default function GanttPage() {
 
                                   {position.width >
                                     9 && (
-                                    <span className="hidden truncate text-[8px] font-semibold text-white/90 xl:block">
+                                    <span className="hidden truncate text-[11px] font-semibold text-white/90 xl:block">
                                       {node.name}
                                     </span>
                                   )}
@@ -862,7 +862,7 @@ export default function GanttPage() {
                   LEGEND
               ================================================= */}
               <div className="flex flex-col gap-3 border-t border-[#dfe4df] bg-[#fafbf9] px-4 py-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5 sm:px-6">
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#5d6966]">
+                <span className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#5d6966]">
                   Activity Status
                 </span>
 
@@ -897,7 +897,7 @@ export default function GanttPage() {
           <section className="mt-5 overflow-hidden rounded-[20px] border border-[#dfe4df] bg-white shadow-[0_8px_28px_rgba(36,48,47,0.04)]">
             <div className="flex flex-col gap-3 border-b border-[#e5e9e5] px-4 py-4 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
               <div className="min-w-0">
-                <p className="text-[8px] font-extrabold uppercase tracking-[0.15em] text-[#c47a44]">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#c47a44]">
                   Selected Activity
                 </p>
 
@@ -908,7 +908,7 @@ export default function GanttPage() {
 
               <button
                 onClick={() => setSelectedId(null)}
-                className="flex w-fit items-center gap-1.5 rounded-lg border border-[#e0e4e1] px-3 py-2 text-[9px] font-bold text-[#6f7976] transition hover:bg-[#f7f8f6]"
+                className="flex w-fit items-center gap-1.5 rounded-lg border border-[#e0e4e1] px-3 py-2 text-[12px] font-bold text-[#6f7976] transition hover:bg-[#f7f8f6]"
               >
                 Close
                 <span>×</span>
@@ -948,7 +948,7 @@ export default function GanttPage() {
         {/* =====================================================
             FOOTER
         ===================================================== */}
-        <footer className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-[#dfe4df] py-5 text-center text-[9px] text-[#8a9390] sm:py-6 sm:text-[10px]">
+        <footer className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-[#dfe4df] py-5 text-center text-[12px] text-[#8a9390] sm:py-6 sm:text-sm">
           <span className="font-extrabold text-[#68364b]">
             FieldSync
           </span>
@@ -1011,12 +1011,12 @@ function StatCard({
           <Icon size={16} />
         </div>
 
-        <span className="text-[8px] font-bold uppercase tracking-[0.12em] text-[#9aa29f]">
+        <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa29f]">
           WBS
         </span>
       </div>
 
-      <p className="mt-4 text-[9px] font-semibold uppercase tracking-wide text-[#78837f] sm:text-[10px]">
+      <p className="mt-4 text-[12px] font-semibold uppercase tracking-wide text-[#78837f] sm:text-sm">
         {label}
       </p>
 
@@ -1041,7 +1041,7 @@ function LegendItem({
   label: string;
 }) {
   return (
-    <div className="flex items-center gap-2 text-[9px] font-semibold text-[#65716e]">
+    <div className="flex items-center gap-2 text-[12px] font-semibold text-[#65716e]">
       <span
         className={`h-2.5 w-2.5 rounded-full ${color}`}
       />
@@ -1064,11 +1064,11 @@ function DetailItem({
 }) {
   return (
     <div className="rounded-xl border border-[#e3e8e4] bg-[#fafbf9] p-3.5">
-      <p className="text-[8px] font-extrabold uppercase tracking-[0.12em] text-[#929b98]">
+      <p className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-[#929b98]">
         {label}
       </p>
 
-      <p className="mt-1.5 truncate text-xs font-bold text-[#34413e]">
+      <p className="mt-1.5 truncate text-sm font-bold text-[#34413e]">
         {value}
       </p>
     </div>
@@ -1098,7 +1098,7 @@ function GanttEmpty({
           : "No scheduled activities"}
       </h3>
 
-      <p className="mt-2 max-w-md text-xs leading-5 text-[#71807d]">
+      <p className="mt-2 max-w-md text-sm leading-5 text-[#71807d]">
         {filtered
           ? "Try another activity status to view the project timeline."
           : "Activities with planned start and end dates will appear here on the Gantt timeline."}
@@ -1107,7 +1107,7 @@ function GanttEmpty({
       {filtered && (
         <button
           onClick={onReset}
-          className="mt-5 rounded-xl border border-[#dcd5d1] bg-white px-4 py-2.5 text-xs font-bold text-[#24302f] transition hover:border-[#68364b] hover:text-[#68364b]"
+          className="mt-5 rounded-xl border border-[#dcd5d1] bg-white px-4 py-2.5 text-sm font-bold text-[#24302f] transition hover:border-[#68364b] hover:text-[#68364b]"
         >
           Show all activities
         </button>

@@ -82,7 +82,7 @@ function getDynamicStatus(
   switch (status) {
     case "COMPLETED":
       return (
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#d5e8dc] bg-[#eef7f1] px-2.5 py-1 text-[8px] font-extrabold tracking-wide text-[#47745e]">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#d5e8dc] bg-[#eef7f1] px-2.5 py-1 text-[11px] font-extrabold tracking-wide text-[#47745e]">
           <CircleCheck size={11} />
           COMPLETED
         </span>
@@ -90,7 +90,7 @@ function getDynamicStatus(
 
     case "OVERDUE":
       return (
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#efd5d5] bg-[#fbefef] px-2.5 py-1 text-[8px] font-extrabold tracking-wide text-[#a34c4c]">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#efd5d5] bg-[#fbefef] px-2.5 py-1 text-[11px] font-extrabold tracking-wide text-[#a34c4c]">
           <TriangleAlert size={11} />
           OVERDUE
         </span>
@@ -98,7 +98,7 @@ function getDynamicStatus(
 
     case "IN_PROGRESS":
       return (
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#d5e0e8] bg-[#edf3f7] px-2.5 py-1 text-[8px] font-extrabold tracking-wide text-[#496c7d]">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#d5e0e8] bg-[#edf3f7] px-2.5 py-1 text-[11px] font-extrabold tracking-wide text-[#496c7d]">
           <Activity size={11} />
           IN PROGRESS
         </span>
@@ -106,7 +106,7 @@ function getDynamicStatus(
 
     default:
       return (
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e1e4e2] bg-[#f5f6f5] px-2.5 py-1 text-[8px] font-bold tracking-wide text-[#7c8582]">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e1e4e2] bg-[#f5f6f5] px-2.5 py-1 text-[11px] font-bold tracking-wide text-[#7c8582]">
           <CircleDashed size={11} />
           NOT STARTED
         </span>
@@ -222,11 +222,11 @@ function WBSRow({
               {LEVEL_LABELS[node.level]}
             </span>
 
-            <span className="shrink-0 rounded-md bg-[#f5f6f4] px-2 py-1 font-mono text-[9px] font-semibold text-[#7c8582]">
+            <span className="shrink-0 rounded-md bg-[#f5f6f4] px-2 py-1 font-mono text-[12px] font-semibold text-[#7c8582]">
               {node.code}
             </span>
 
-            <span className="min-w-0 truncate text-[11px] font-bold text-[#35413f]">
+            <span className="min-w-0 truncate text-sm font-bold text-[#35413f]">
               {node.name}
             </span>
           </div>
@@ -253,7 +253,7 @@ function WBSRow({
               />
             </div>
 
-            <span className="w-11 text-right text-[10px] font-extrabold text-[#35413f]">
+            <span className="w-11 text-right text-sm font-extrabold text-[#35413f]">
               {progress.toFixed(1)}%
             </span>
           </div>
@@ -261,26 +261,26 @@ function WBSRow({
 
         {/* QUANTITY */}
         <td className="whitespace-nowrap px-4 py-3.5 text-right">
-          <span className="text-[10px] font-bold text-[#35413f]">
+          <span className="text-sm font-bold text-[#35413f]">
             {node.actual_qty?.toFixed(1) ?? "0"}
           </span>
 
-          <span className="mx-1 text-[9px] text-[#a2aaa7]">
+          <span className="mx-1 text-[12px] text-[#a2aaa7]">
             /
           </span>
 
-          <span className="text-[10px] font-medium text-[#7e8986]">
+          <span className="text-sm font-medium text-[#7e8986]">
             {node.planned_qty?.toFixed(1) ?? "0"}
           </span>
 
-          <span className="ml-1 text-[9px] font-semibold text-[#9aa3a0]">
+          <span className="ml-1 text-[12px] font-semibold text-[#9aa3a0]">
             {node.unit}
           </span>
         </td>
 
         {/* START */}
         <td className="whitespace-nowrap px-4 py-3.5">
-          <div className="flex items-center gap-1.5 text-[9px] font-medium text-[#788380]">
+          <div className="flex items-center gap-1.5 text-[12px] font-medium text-[#788380]">
             <CalendarDays
               size={11}
               className="text-[#9ba4a1]"
@@ -301,7 +301,7 @@ function WBSRow({
         {/* END */}
         <td className="whitespace-nowrap px-4 py-3.5">
           <div
-            className={`flex items-center gap-1.5 text-[9px] font-medium ${
+            className={`flex items-center gap-1.5 text-[12px] font-medium ${
               status === "OVERDUE"
                 ? "text-[#a34c4c]"
                 : "text-[#788380]"
@@ -451,7 +451,7 @@ export default function WBSPage() {
                   <Layers3 size={14} />
                 </div>
 
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                <span className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                   Work Breakdown Structure
                 </span>
               </div>
@@ -460,7 +460,7 @@ export default function WBSPage() {
                 WBS Tree
               </h1>
 
-              <p className="mt-2 max-w-2xl text-xs leading-6 text-[#aab7b4] sm:text-sm">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#aab7b4] sm:text-sm">
                 6-Level Work Breakdown Structure
                 {projectName
                   ? ` — ${projectName}`
@@ -468,7 +468,7 @@ export default function WBSPage() {
               </p>
 
               {lastUpdated && (
-                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1.5 text-[9px] font-semibold text-[#b9c4c1]">
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1.5 text-[12px] font-semibold text-[#b9c4c1]">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#6da98d] opacity-60" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#6da98d]" />
@@ -485,7 +485,7 @@ export default function WBSPage() {
                 onClick={() =>
                   setExpandKey(true)
                 }
-                className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 text-[10px] font-bold text-[#d7dfdd] transition hover:bg-white/[0.10]"
+                className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 text-sm font-bold text-[#d7dfdd] transition hover:bg-white/[0.10]"
               >
                 <ChevronDown size={14} />
                 Expand All
@@ -496,7 +496,7 @@ export default function WBSPage() {
                 onClick={() =>
                   setExpandKey(false)
                 }
-                className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 text-[10px] font-bold text-[#d7dfdd] transition hover:bg-white/[0.10]"
+                className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 text-sm font-bold text-[#d7dfdd] transition hover:bg-white/[0.10]"
               >
                 <ChevronRight size={14} />
                 Collapse All
@@ -505,7 +505,7 @@ export default function WBSPage() {
               <button
                 type="button"
                 onClick={fetchData}
-                className="flex h-10 items-center justify-center gap-2 rounded-xl bg-[#c47a44] px-4 text-[10px] font-bold text-white transition hover:bg-[#d08a55]"
+                className="flex h-10 items-center justify-center gap-2 rounded-xl bg-[#c47a44] px-4 text-sm font-bold text-white transition hover:bg-[#d08a55]"
               >
                 <RefreshCw size={13} />
                 Refresh
@@ -520,7 +520,7 @@ export default function WBSPage() {
         <section className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           <div className="rounded-[18px] border border-[#dfe2de] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
                 Total Nodes
               </span>
 
@@ -536,7 +536,7 @@ export default function WBSPage() {
 
           <div className="rounded-[18px] border border-[#dfe2de] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
                 In Progress
               </span>
 
@@ -552,7 +552,7 @@ export default function WBSPage() {
 
           <div className="rounded-[18px] border border-[#dfe2de] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
                 Completed
               </span>
 
@@ -568,7 +568,7 @@ export default function WBSPage() {
 
           <div className="rounded-[18px] border border-[#eadede] bg-white p-4 shadow-[0_8px_30px_rgba(36,48,47,0.04)]">
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
+              <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#8b9693]">
                 Overdue
               </span>
 
@@ -587,7 +587,7 @@ export default function WBSPage() {
             ERROR
         ===================================================== */}
         {error && (
-          <div className="mb-5 flex items-start gap-3 rounded-[18px] border border-[#efd2d2] bg-[#fff7f7] p-4 text-xs text-[#a34c4c]">
+          <div className="mb-5 flex items-start gap-3 rounded-[18px] border border-[#efd2d2] bg-[#fff7f7] p-4 text-sm text-[#a34c4c]">
             <TriangleAlert
               size={16}
               className="mt-0.5 shrink-0"
@@ -598,7 +598,7 @@ export default function WBSPage() {
                 Unable to load WBS data
               </p>
 
-              <p className="mt-1 text-[10px] text-[#a96565]">
+              <p className="mt-1 text-sm text-[#a96565]">
                 {error}
               </p>
             </div>
@@ -619,17 +619,17 @@ export default function WBSPage() {
                     className="text-[#c47a44]"
                   />
 
-                  <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] text-[#8b9693]">
+                  <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#8b9693]">
                     Project Structure
                   </p>
                 </div>
 
-                <p className="mt-1 text-xs font-bold text-[#35413f]">
+                <p className="mt-1 text-sm font-bold text-[#35413f]">
                   Planned vs Actual Progress
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[9px] text-[#8b9693]">
+              <div className="flex items-center gap-2 text-[12px] text-[#8b9693]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#4c7565]" />
                 Auto-updating every 10 seconds
               </div>
@@ -640,27 +640,27 @@ export default function WBSPage() {
               <table className="w-full min-w-[1050px]">
                 <thead>
                   <tr className="border-b border-[#e4e7e4] bg-[#f7f8f6]">
-                    <th className="px-4 py-3 text-left text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-left text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Node
                     </th>
 
-                    <th className="px-4 py-3 text-center text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-center text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Status
                     </th>
 
-                    <th className="px-4 py-3 text-left text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-left text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Progress
                     </th>
 
-                    <th className="px-4 py-3 text-right text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-right text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Actual / Planned
                     </th>
 
-                    <th className="px-4 py-3 text-left text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-left text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       Start
                     </th>
 
-                    <th className="px-4 py-3 text-left text-[8px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
+                    <th className="px-4 py-3 text-left text-[11px] font-extrabold uppercase tracking-[0.13em] text-[#89938f]">
                       End
                     </th>
                   </tr>
@@ -681,7 +681,7 @@ export default function WBSPage() {
                           No WBS nodes found
                         </p>
 
-                        <p className="mt-1 text-[10px] text-[#8b9693]">
+                        <p className="mt-1 text-sm text-[#8b9693]">
                           No work breakdown data is
                           currently available.
                         </p>
@@ -707,27 +707,27 @@ export default function WBSPage() {
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-[#68364b]" />
-                  <span className="text-[9px] text-[#7c8582]">
+                  <span className="text-[12px] text-[#7c8582]">
                     In Progress
                   </span>
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-[#4c7565]" />
-                  <span className="text-[9px] text-[#7c8582]">
+                  <span className="text-[12px] text-[#7c8582]">
                     Completed
                   </span>
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-[#a34c4c]" />
-                  <span className="text-[9px] text-[#7c8582]">
+                  <span className="text-[12px] text-[#7c8582]">
                     Overdue
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-1.5 text-[9px] font-medium text-[#8b9693]">
+              <div className="flex items-center gap-1.5 text-[12px] font-medium text-[#8b9693]">
                 <RefreshCw size={11} />
                 Live project data
               </div>
@@ -751,7 +751,7 @@ export default function WBSPage() {
               Loading WBS tree...
             </p>
 
-            <p className="mt-1 text-[10px] text-[#8b9693]">
+            <p className="mt-1 text-sm text-[#8b9693]">
               Fetching the latest project structure
               and progress data.
             </p>
@@ -761,7 +761,7 @@ export default function WBSPage() {
         {/* =====================================================
             FOOTER
         ===================================================== */}
-        <footer className="mt-7 flex flex-col items-center justify-between gap-2 border-t border-[#dfe2de] py-5 text-[9px] text-[#8a9491] sm:flex-row sm:text-[10px]">
+        <footer className="mt-7 flex flex-col items-center justify-between gap-2 border-t border-[#dfe2de] py-5 text-[12px] text-[#8a9491] sm:flex-row sm:text-sm">
           <p className="font-medium">
             FieldSync Project Management
           </p>

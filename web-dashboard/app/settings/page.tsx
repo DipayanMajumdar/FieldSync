@@ -177,11 +177,11 @@ export default function SettingsPage() {
                   <SettingsIcon size={15} />
                 </div>
 
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-[10px]">
+                <span className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c47a44] sm:text-sm">
                   Administrator Control Center
                 </span>
 
-                <span className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[8px] font-bold uppercase tracking-wide text-[#aebbb7]">
+                <span className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-[#aebbb7]">
                   Admin
                 </span>
               </div>
@@ -190,7 +190,7 @@ export default function SettingsPage() {
                 Settings & Control
               </h1>
 
-              <p className="mt-2 max-w-2xl text-xs leading-6 text-[#aebbb7] sm:text-sm">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#aebbb7] sm:text-sm">
                 Manage users, projects, permissions, AI behaviour,
                 alerts and system preferences from one control surface.
               </p>
@@ -198,7 +198,7 @@ export default function SettingsPage() {
 
             <button
               onClick={() => router.push("/dashboard")}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-xs font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.09] sm:w-fit"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.09] sm:w-fit"
             >
               <ArrowLeft size={15} />
               Back to Dashboard
@@ -212,7 +212,7 @@ export default function SettingsPage() {
         <section className="mb-6">
           <div className="mb-3 flex items-end justify-between gap-4">
             <div>
-              <p className="text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#c47a44]">
+              <p className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c47a44]">
                 System Overview
               </p>
 
@@ -221,7 +221,7 @@ export default function SettingsPage() {
               </h2>
             </div>
 
-            <div className="hidden items-center gap-2 rounded-full bg-[#edf7f0] px-3 py-1.5 text-[9px] font-bold text-[#2f7d4a] sm:flex">
+            <div className="hidden items-center gap-2 rounded-full bg-[#edf7f0] px-3 py-1.5 text-[12px] font-bold text-[#2f7d4a] sm:flex">
               <CircleDot size={11} />
               All core services operational
             </div>
@@ -298,7 +298,7 @@ export default function SettingsPage() {
           <div className="rounded-[22px] border border-[#dfe4df] bg-[#102a2a] p-5 text-white shadow-[0_10px_35px_rgba(16,42,42,0.08)] sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.17em] text-[#c47a44]">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.17em] text-[#c47a44]">
                   Environment
                 </p>
 
@@ -345,13 +345,13 @@ export default function SettingsPage() {
                     setSearchUser(event.target.value)
                   }
                   placeholder="Search users, email or role..."
-                  className="h-10 w-full rounded-xl border border-[#d9dfdb] bg-[#fafbf9] pl-9 pr-3 text-xs text-[#24302f] outline-none transition placeholder:text-[#a2aaa7] focus:border-[#68364b] focus:ring-2 focus:ring-[#68364b]/10"
+                  className="h-10 w-full rounded-xl border border-[#d9dfdb] bg-[#fafbf9] pl-9 pr-3 text-sm text-[#24302f] outline-none transition placeholder:text-[#a2aaa7] focus:border-[#68364b] focus:ring-2 focus:ring-[#68364b]/10"
                 />
               </div>
 
               <button
                 type="button"
-                className="flex items-center justify-center gap-2 rounded-xl bg-[#68364b] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#592d40]"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#68364b] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#592d40]"
               >
                 <Users size={14} />
                 User Directory
@@ -363,19 +363,19 @@ export default function SettingsPage() {
             <table className="w-full min-w-[850px] text-left">
               <thead>
                 <tr className="border-b border-[#e5e9e5] bg-[#fafbf9]">
-                  <th className="px-5 py-3 text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     User
                   </th>
 
-                  <th className="px-5 py-3 text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Role
                   </th>
 
-                  <th className="px-5 py-3 text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Access
                   </th>
 
-                  <th className="px-5 py-3 text-right text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-right text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Action
                   </th>
                 </tr>
@@ -392,16 +392,16 @@ export default function SettingsPage() {
                     >
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3e9ed] text-xs font-extrabold text-[#68364b]">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3e9ed] text-sm font-extrabold text-[#68364b]">
                             {user.initials}
                           </div>
 
                           <div>
-                            <p className="text-xs font-bold text-[#24302f]">
+                            <p className="text-sm font-bold text-[#24302f]">
                               {user.name}
                             </p>
 
-                            <p className="mt-0.5 text-[10px] text-[#8a9390]">
+                            <p className="mt-0.5 text-sm text-[#8a9390]">
                               {user.email}
                             </p>
                           </div>
@@ -409,7 +409,7 @@ export default function SettingsPage() {
                       </td>
 
                       <td className="px-5 py-4">
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f5f1ed] px-2.5 py-1.5 text-[9px] font-bold text-[#805d45]">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f5f1ed] px-2.5 py-1.5 text-[12px] font-bold text-[#805d45]">
                           <BriefcaseBusiness size={11} />
                           {user.role}
                         </span>
@@ -417,7 +417,7 @@ export default function SettingsPage() {
 
                       <td className="px-5 py-4">
                         <span
-                          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[9px] font-extrabold ${
+                          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[12px] font-extrabold ${
                             status === "Active"
                               ? "bg-[#edf7f0] text-[#2f7d4a]"
                               : "bg-[#f5f5f4] text-[#7e8784]"
@@ -438,7 +438,7 @@ export default function SettingsPage() {
                           type="button"
                           onClick={() => toggleUserStatus(user.id)}
                           disabled={user.id === 1}
-                          className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[10px] font-bold transition ${
+                          className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-bold transition ${
                             user.id === 1
                               ? "cursor-not-allowed border-[#e5e9e5] bg-[#f7f8f6] text-[#a0a7a4]"
                               : status === "Active"
@@ -479,11 +479,11 @@ export default function SettingsPage() {
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-md bg-[#102a2a] px-2 py-1 text-[9px] font-extrabold tracking-wide text-white">
+                      <span className="rounded-md bg-[#102a2a] px-2 py-1 text-[12px] font-extrabold tracking-wide text-white">
                         {project.code}
                       </span>
 
-                      <span className="rounded-full bg-[#edf7f0] px-2 py-1 text-[8px] font-extrabold uppercase tracking-wide text-[#2f7d4a]">
+                      <span className="rounded-full bg-[#edf7f0] px-2 py-1 text-[11px] font-extrabold uppercase tracking-wide text-[#2f7d4a]">
                         {project.status}
                       </span>
                     </div>
@@ -492,7 +492,7 @@ export default function SettingsPage() {
                       {project.name}
                     </h3>
 
-                    <p className="mt-1 text-[10px] text-[#8a9390]">
+                    <p className="mt-1 text-sm text-[#8a9390]">
                       {project.location}
                     </p>
                   </div>
@@ -507,11 +507,11 @@ export default function SettingsPage() {
 
                 <div className="mt-5">
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-[9px] font-bold uppercase tracking-wide text-[#8b9692]">
+                    <span className="text-[12px] font-bold uppercase tracking-wide text-[#8b9692]">
                       Progress
                     </span>
 
-                    <span className="text-xs font-extrabold text-[#68364b]">
+                    <span className="text-sm font-extrabold text-[#68364b]">
                       {project.progress}%
                     </span>
                   </div>
@@ -527,12 +527,12 @@ export default function SettingsPage() {
                 </div>
 
                 <div className="mt-4 flex items-center justify-between border-t border-[#e5e9e5] pt-4">
-                  <div className="flex items-center gap-2 text-[10px] text-[#71807d]">
+                  <div className="flex items-center gap-2 text-sm text-[#71807d]">
                     <User size={13} />
                     {project.manager}
                   </div>
 
-                  <button className="text-[10px] font-bold text-[#68364b] hover:underline">
+                  <button className="text-sm font-bold text-[#68364b] hover:underline">
                     Manage
                   </button>
                 </div>
@@ -556,16 +556,16 @@ export default function SettingsPage() {
             <table className="w-full min-w-[760px]">
               <thead>
                 <tr className="border-b border-[#e5e9e5] bg-[#fafbf9]">
-                  <th className="px-5 py-3 text-left text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-left text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Capability
                   </th>
-                  <th className="px-5 py-3 text-center text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-center text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Admin
                   </th>
-                  <th className="px-5 py-3 text-center text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-center text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Project Manager
                   </th>
-                  <th className="px-5 py-3 text-center text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
+                  <th className="px-5 py-3 text-center text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8b9692]">
                     Field Engineer
                   </th>
                 </tr>
@@ -671,7 +671,7 @@ export default function SettingsPage() {
                   </div>
 
                   <div>
-                    <p className="text-[9px] font-extrabold uppercase tracking-wide text-[#8a9390]">
+                    <p className="text-[12px] font-extrabold uppercase tracking-wide text-[#8a9390]">
                       Current threshold
                     </p>
 
@@ -679,7 +679,7 @@ export default function SettingsPage() {
                       {confidenceThreshold}%
                     </p>
 
-                    <p className="mt-1 text-[10px] leading-4 text-[#71807d]">
+                    <p className="mt-1 text-sm leading-4 text-[#71807d]">
                       Suggestions below this confidence remain
                       subject to manual review.
                     </p>
@@ -750,15 +750,15 @@ export default function SettingsPage() {
                   </div>
 
                   <div>
-                    <p className="text-[9px] font-extrabold uppercase tracking-wide text-[#8a9390]">
+                    <p className="text-[12px] font-extrabold uppercase tracking-wide text-[#8a9390]">
                       Alert policy
                     </p>
 
-                    <p className="mt-1 text-xs font-bold text-[#24302f]">
+                    <p className="mt-1 text-sm font-bold text-[#24302f]">
                       Trigger after {delayThreshold} days
                     </p>
 
-                    <p className="mt-0.5 text-[10px] text-[#71807d]">
+                    <p className="mt-0.5 text-sm text-[#71807d]">
                       Applies to delayed project activities.
                     </p>
                   </div>
@@ -834,12 +834,12 @@ export default function SettingsPage() {
                       Sohan Das
                     </h3>
 
-                    <span className="rounded-full bg-[#f3e9ed] px-2 py-1 text-[8px] font-extrabold uppercase tracking-wide text-[#68364b]">
+                    <span className="rounded-full bg-[#f3e9ed] px-2 py-1 text-[11px] font-extrabold uppercase tracking-wide text-[#68364b]">
                       Administrator
                     </span>
                   </div>
 
-                  <p className="mt-1 break-words text-[10px] text-[#71807d]">
+                  <p className="mt-1 break-words text-sm text-[#71807d]">
                     admin@fieldsync.com
                   </p>
                 </div>
@@ -901,7 +901,7 @@ export default function SettingsPage() {
         ===================================================== */}
         <div className="sticky bottom-3 z-20 mb-6 flex flex-col gap-2 rounded-2xl border border-[#dfe4df] bg-white/95 p-3 shadow-[0_14px_40px_rgba(36,48,47,0.13)] backdrop-blur-md sm:bottom-4 sm:flex-row sm:items-center sm:justify-end sm:gap-3 sm:p-4">
           {saved && (
-            <div className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#edf7f0] px-4 py-2.5 text-xs font-semibold text-[#2f7d4a] sm:mr-auto sm:w-fit">
+            <div className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#edf7f0] px-4 py-2.5 text-sm font-semibold text-[#2f7d4a] sm:mr-auto sm:w-fit">
               <Check size={15} />
               Settings saved for this session
             </div>
@@ -927,7 +927,7 @@ export default function SettingsPage() {
         {/* =====================================================
             FOOTER
         ===================================================== */}
-        <footer className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-[#dfe4df] py-5 text-center text-[9px] text-[#8a9390] sm:py-6 sm:text-[10px]">
+        <footer className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-[#dfe4df] py-5 text-center text-[12px] text-[#8a9390] sm:py-6 sm:text-sm">
           <span className="font-extrabold text-[#68364b]">
             FieldSync
           </span>
@@ -987,12 +987,12 @@ function AdminMetric({
           <Icon size={18} />
         </div>
 
-        <span className="text-[8px] font-extrabold uppercase tracking-wide text-[#9aa39f]">
+        <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#9aa39f]">
           Live
         </span>
       </div>
 
-      <p className="mt-4 text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#8a9390]">
+      <p className="mt-4 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#8a9390]">
         {label}
       </p>
 
@@ -1001,12 +1001,12 @@ function AdminMetric({
           {value}
         </span>
 
-        <span className="pb-1 text-[9px] font-medium text-[#8a9390]">
+        <span className="pb-1 text-[12px] font-medium text-[#8a9390]">
           records
         </span>
       </div>
 
-      <p className="mt-1 text-[9px] text-[#9aa39f]">
+      <p className="mt-1 text-[12px] text-[#9aa39f]">
         {detail}
       </p>
     </div>
@@ -1035,17 +1035,17 @@ function HealthCard({
           <Icon size={16} />
         </div>
 
-        <span className="flex items-center gap-1.5 text-[9px] font-extrabold text-[#2f7d4a]">
+        <span className="flex items-center gap-1.5 text-[12px] font-extrabold text-[#2f7d4a]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#4c956f]" />
           {status}
         </span>
       </div>
 
-      <p className="mt-4 text-xs font-bold text-[#24302f]">
+      <p className="mt-4 text-sm font-bold text-[#24302f]">
         {title}
       </p>
 
-      <p className="mt-1 text-[9px] text-[#8a9390]">
+      <p className="mt-1 text-[12px] text-[#8a9390]">
         {detail}
       </p>
     </div>
@@ -1065,11 +1065,11 @@ function StatusLine({
 }) {
   return (
     <div className="flex items-center justify-between border-b border-white/[0.08] pb-3 last:border-b-0 last:pb-0">
-      <span className="text-[10px] text-[#aebbb7]">
+      <span className="text-sm text-[#aebbb7]">
         {label}
       </span>
 
-      <span className="text-[10px] font-bold text-white">
+      <span className="text-sm font-bold text-white">
         {value}
       </span>
     </div>
@@ -1101,7 +1101,7 @@ function PermissionRow({
             <Icon size={14} />
           </div>
 
-          <span className="text-xs font-bold text-[#24302f]">
+          <span className="text-sm font-bold text-[#24302f]">
             {label}
           </span>
         </div>
@@ -1169,11 +1169,11 @@ function ControlCard({
         </div>
 
         <div className="min-w-0">
-          <h3 className="text-xs font-bold text-[#24302f] sm:text-sm">
+          <h3 className="text-sm font-bold text-[#24302f] sm:text-sm">
             {title}
           </h3>
 
-          <p className="mt-1 text-[10px] leading-4 text-[#71807d]">
+          <p className="mt-1 text-sm leading-4 text-[#71807d]">
             {description}
           </p>
         </div>
@@ -1218,18 +1218,18 @@ function SecurityRow({
         </div>
 
         <div>
-          <h3 className="text-xs font-bold text-[#24302f]">
+          <h3 className="text-sm font-bold text-[#24302f]">
             {title}
           </h3>
 
-          <p className="mt-1 text-[10px] leading-4 text-[#71807d]">
+          <p className="mt-1 text-sm leading-4 text-[#71807d]">
             {description}
           </p>
         </div>
       </div>
 
       <span
-        className={`flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-bold ${
+        className={`flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold ${
           positive
             ? "bg-[#edf7f0] text-[#2f7d4a]"
             : "border border-[#dfe4df] bg-white text-[#68364b]"
@@ -1264,7 +1264,7 @@ function SectionHeader({
       </div>
 
       <div className="min-w-0">
-        <p className="text-[8px] font-extrabold uppercase tracking-[0.16em] text-[#c47a44]">
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c47a44]">
           {eyebrow}
         </p>
 
@@ -1272,7 +1272,7 @@ function SectionHeader({
           {title}
         </h2>
 
-        <p className="mt-0.5 text-[10px] text-[#71807d] sm:text-xs">
+        <p className="mt-0.5 text-sm text-[#71807d] sm:text-sm">
           {description}
         </p>
       </div>
@@ -1345,11 +1345,11 @@ function SettingRow({
         </div>
 
         <div className="min-w-0">
-          <h3 className="text-xs font-bold text-[#24302f] sm:text-sm">
+          <h3 className="text-sm font-bold text-[#24302f] sm:text-sm">
             {title}
           </h3>
 
-          <p className="mt-1 max-w-[650px] text-[10px] leading-4 text-[#71807d] sm:text-xs sm:leading-5">
+          <p className="mt-1 max-w-[650px] text-sm leading-4 text-[#71807d] sm:text-sm sm:leading-5">
             {description}
           </p>
         </div>
@@ -1378,14 +1378,14 @@ function FormField({
 }) {
   return (
     <div className="min-w-0">
-      <label className="mb-2 block text-[10px] font-bold uppercase tracking-wide text-[#65716e]">
+      <label className="mb-2 block text-sm font-bold uppercase tracking-wide text-[#65716e]">
         {label}
       </label>
 
       <input
         defaultValue={defaultValue}
         disabled={disabled}
-        className={`w-full rounded-xl border px-4 py-3 text-xs outline-none transition ${
+        className={`w-full rounded-xl border px-4 py-3 text-sm outline-none transition ${
           disabled
             ? "cursor-not-allowed border-[#e5e9e5] bg-[#f7f8f6] text-[#8a9390]"
             : "border-[#d9dfdb] bg-white text-[#24302f] focus:border-[#68364b] focus:ring-2 focus:ring-[#68364b]/10"
@@ -1415,7 +1415,7 @@ function SelectField({
 }) {
   return (
     <div className="min-w-0">
-      <label className="mb-2 block text-[10px] font-bold uppercase tracking-wide text-[#65716e]">
+      <label className="mb-2 block text-sm font-bold uppercase tracking-wide text-[#65716e]">
         {label}
       </label>
 
@@ -1424,7 +1424,7 @@ function SelectField({
         onChange={(event) =>
           onChange(event.target.value)
         }
-        className="w-full min-w-0 rounded-xl border border-[#d9dfdb] bg-white px-3 py-3 text-xs text-[#24302f] outline-none transition focus:border-[#68364b] focus:ring-2 focus:ring-[#68364b]/10 sm:px-4 sm:text-sm"
+        className="w-full min-w-0 rounded-xl border border-[#d9dfdb] bg-white px-3 py-3 text-sm text-[#24302f] outline-none transition focus:border-[#68364b] focus:ring-2 focus:ring-[#68364b]/10 sm:px-4 sm:text-sm"
       >
         {options.map((option) => (
           <option
