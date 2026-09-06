@@ -1,0 +1,10 @@
+{
+  "name": "sih-master-bridge",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,DASHBOARD,AI\" -c \"blue,green,yellow\" \"cd backend-express && npm run dev\" \"cd web-dashboard && npm run dev\" \"cd ai-worker && .\\venv\\Scripts\\python main.py\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

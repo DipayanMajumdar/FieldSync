@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+/* =========================================================
+   FIELDSYNC — GLOBAL DESIGN SYSTEM
+   Premium Infrastructure / Enterprise UI
+   ========================================================= */
+
+:root {
+  --fs-ink: #102a2a;
+  --fs-ink-soft: #29403e;
+
+  --fs-burgundy: #68364b;
+  --fs-burgundy-dark: #592d40;
+
+  --fs-orange: #c47a44;
+  --fs-orange-soft: #f4e4d5;
+
+  --fs-bg: #f4f5f3;
+  --fs-surface: #ffffff;
+  --fs-surface-soft: #f8f9f7;
+
+  --fs-border: #e2e6e2;
+  --fs-border-dark: #d4dad6;
+
+  --fs-muted: #687573;
+  --fs-muted-light: #8a9693;
+
+  --fs-success: #3f8065;
+  --fs-warning: #b97832;
+  --fs-danger: #a95252;
+  --fs-info: #47758a;
+
+  --fs-radius-sm: 8px;
+  --fs-radius-md: 12px;
+  --fs-radius-lg: 16px;
+  --fs-radius-xl: 20px;
+
+  --fs-shadow-sm: 0 2px 8px rgba(16, 42, 42, 0.05);
+  --fs-shadow-md: 0 8px 24px rgba(16, 42, 42, 0.08);
+  --fs-shadow-lg: 0 18px 45px rgba(16, 42, 42, 0.11);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background: var(--fs-bg);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(196, 122, 68, 0.035),
+      transparent 30%
+    ),
+    var(--fs-bg);
+
+  color: var(--fs-ink);
+
+  font-family:
+    var(--font-geist-sans),
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  color: var(--fs-ink);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--fs-muted-light);
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(104, 54, 75, 0.14);
+  color: var(--fs-ink);
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd2ce transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #cbd2ce;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #aeb9b4;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: 600;
+}
+
+td,
+th {
+  vertical-align: middle;
+}
+
+/* =========================================================
+   COMMON ANIMATIONS
+   ========================================================= */
+
+@keyframes fs-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fs-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fs-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes fs-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   UTILITY CLASSES
+   ========================================================= */
+
+.fs-fade-in {
+  animation: fs-fade-in 0.35s ease-out both;
+}
+
+.fs-slide-up {
+  animation: fs-slide-up 0.4s ease-out both;
+}
+
+.fs-pulse {
+  animation: fs-pulse 1.8s ease-in-out infinite;
+}
+
+.fs-spin {
+  animation: fs-spin 0.8s linear infinite;
+}
+
+/* =========================================================
+   PREMIUM CARD
+   ========================================================= */
+
+.fs-card {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: var(--fs-radius-lg);
+  box-shadow: var(--fs-shadow-sm);
+}
+
+.fs-card-hover {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.fs-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: var(--fs-border-dark);
+  box-shadow: var(--fs-shadow-md);
+}
+
+/* =========================================================
+   RESPONSIVE SAFETY
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
