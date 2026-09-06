@@ -6,6 +6,7 @@ import { initDatabase } from '../services/database';
 
 export default function RootLayout() {
   const [isReady, setIsReady] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const router = useRouter();
   const segments = useSegments();
 
@@ -14,35 +15,39 @@ export default function RootLayout() {
       try {
         await initDatabase();
       } catch (error) {
-        console.error('Initialization error:', error);
-      } finally {
-        setIsReady(true);
+        console.error('DB init error:', error);
       }
+
+      try {
+        const token = await SecureStore.getItemAsync('fs_token');
+        setIsAuthenticated(!!token);
+      } catch (error) {
+        console.error('Auth check error:', error);
+        setIsAuthenticated(false);
+      }
+
+      setIsReady(true);
     };
+
     initApp();
   }, []);
 
   useEffect(() => {
-    if (!isReady) return;
+    if (!isReady || isAuthenticated === null) return;
 
-    const checkAuth = async () => {
-      const token = await SecureStore.getItemAsync('fs_token');
-      const inAuthGroup = segments[0] === '(auth)';
-      
-      if (!token && !inAuthGroup) {
-        router.replace('/(auth)/login');
-      } else if (token && inAuthGroup) {
-        router.replace('/(tabs)');
-      }
-    };
+    const inAuthGroup = segments[0] === '(auth)';
 
-    checkAuth();
-  }, [isReady, segments]);
+    if (!isAuthenticated && !inAuthGroup) {
+      router.replace('/(auth)/login');
+    } else if (isAuthenticated && inAuthGroup) {
+      router.replace('/(tabs)');
+    }
+  }, [isReady, isAuthenticated, segments]);
 
   if (!isReady) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator size="large" color="#0000ff" />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5' }}>
+        <ActivityIndicator size="large" color="#007AFF" />
       </View>
     );
   }

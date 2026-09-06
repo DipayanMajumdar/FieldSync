@@ -44,7 +44,6 @@
         }
       ],
       "expo-sqlite",
-      "expo-av",
       [
         "expo-location",
         {

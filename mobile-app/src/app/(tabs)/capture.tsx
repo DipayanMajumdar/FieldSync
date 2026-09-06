@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Alert, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native';
 import * as Location from 'expo-location';
 import * as ImagePicker from 'expo-image-picker';
+import { useAudioRecorder, RecordingPresets, requestRecordingPermissionsAsync, setAudioModeAsync } from 'expo-audio';
 import Constants from 'expo-constants';
 import { getProjects, getWBSTree } from '../../services/api';
 import { saveSubmission } from '../../services/database';
@@ -19,9 +20,69 @@ export default function CaptureScreen() {
   
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
   const [photoUri, setPhotoUri] = useState<string | null>(null);
+  const [audioUri, setAudioUri] = useState<string | null>(null);
+  
+  const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
   
   const [isLocating, setIsLocating] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Audio recording handlers
+  const handleToggleRecord = async () => {
+    try {
+      if (recorder.isRecording) {
+        await recorder.stop();
+        const uri = recorder.uri;
+        if (uri) {
+          setAudioUri(uri);
+          transcribeAudio(uri);
+        }
+      } else {
+        const permResult = await requestRecordingPermissionsAsync();
+        if (!permResult.granted) {
+          Alert.alert('Permission Denied', 'Microphone permission is required to record audio.');
+          return;
+        }
+        await setAudioModeAsync({
+          allowsRecordingIOS: true,
+          playsInSilentModeIOS: true,
+        });
+        recorder.record();
+      }
+    } catch (err) {
+      console.error('Recording failed', err);
+      Alert.alert('Error', 'Failed to start/stop recording');
+    }
+  };
+
+  const transcribeAudio = async (uri: string) => {
+    try {
+      Alert.alert('Transcribing', 'Sending audio to Python WhisperFlow...');
+      const formData = new FormData();
+      // @ts-ignore
+      formData.append('file', {
+        uri,
+        name: 'remark.m4a',
+        type: 'audio/m4a',
+      });
+      
+      const whisperUrl = process.env.EXPO_PUBLIC_WHISPER_URL || 'http://10.0.2.2:5000/transcribe';
+      const res = await fetch(whisperUrl, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      
+      const data = await res.json();
+      if (data.text) {
+        setNotes((prev) => prev ? `${prev}\n[Voice]: ${data.text}` : `[Voice]: ${data.text}`);
+        Alert.alert('Transcription Success', 'Added to notes!');
+      }
+    } catch (error) {
+      console.warn('Whisper transcription failed', error);
+      Alert.alert('Transcription Failed', 'Could not reach WhisperFlow server');
+    }
+  };
 
   useEffect(() => {
     loadActivities();
@@ -148,6 +209,7 @@ export default function CaptureScreen() {
       setNotes('');
       setLocation(null);
       setPhotoUri(null);
+      setAudioUri(null);
       setSearch('');
       setFilteredActivities(activities);
       
@@ -249,9 +311,14 @@ export default function CaptureScreen() {
                 <Text style={styles.mediaInfo}>Photo attached</Text>
               )}
               
-              <TouchableOpacity style={styles.mediaButton} onPress={() => Alert.alert('Notice', 'Audio recording not implemented in MVP')}>
-                <Text style={styles.mediaButtonText}>Record Audio Remark</Text>
+              <TouchableOpacity style={styles.mediaButton} onPress={handleToggleRecord}>
+                <Text style={styles.mediaButtonText}>
+                  {recorder.isRecording ? '⏹ Stop Recording' : '🎤 Record Audio Remark'}
+                </Text>
               </TouchableOpacity>
+              {audioUri && (
+                <Text style={styles.mediaInfo}>Audio attached</Text>
+              )}
             </View>
 
             <TouchableOpacity 

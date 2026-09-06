@@ -5,8 +5,8 @@ import * as SecureStore from 'expo-secure-store';
 import { login } from '../../services/api';
 
 export default function LoginScreen() {
-  const [email, setEmail] = useState('admin@fieldsync.io');
-  const [password, setPassword] = useState('Admin@1234');
+  const [email, setEmail] = useState('engineer@fieldsync.com');
+  const [password, setPassword] = useState('engineer123');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();

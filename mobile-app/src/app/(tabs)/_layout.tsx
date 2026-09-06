@@ -1,4 +1,5 @@
 import { Tabs } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabsLayout() {
   return (
@@ -7,21 +8,21 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: () => null, // Placeholder for icon
+          tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
         name="capture"
         options={{
           title: 'Capture',
-          tabBarIcon: () => null,
+          tabBarIcon: ({ color, size }) => <Ionicons name="camera-outline" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
         name="sync"
         options={{
           title: 'Sync',
-          tabBarIcon: () => null,
+          tabBarIcon: ({ color, size }) => <Ionicons name="sync-outline" color={color} size={size} />,
         }}
       />
     </Tabs>
