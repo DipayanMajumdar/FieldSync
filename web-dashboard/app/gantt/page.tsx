@@ -702,7 +702,7 @@ export default function GanttPage() {
                                 : "hover:bg-[#fafbf9]"
                             }`}
                           >
-                            <div className="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f3e9ed] text-[12px] font-extrabold text-[#68364b]">
+                            <div className="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f3e9ed] text-[13px] font-extrabold text-[#68364b]">
                               {String(index + 1).padStart(
                                 2,
                                 "0"
@@ -718,12 +718,12 @@ export default function GanttPage() {
                               </div>
 
                               <div className="mt-1 flex items-center gap-2">
-                                <span className="font-mono text-[11px] uppercase tracking-wide text-[#9aa29f]">
+                                <span className="font-mono text-[12px] uppercase tracking-wide text-[#9aa29f]">
                                   {node.code || "—"}
                                 </span>
 
                                 <span
-                                  className={`rounded-full px-1.5 py-0.5 text-[7px] font-extrabold uppercase ${statusStyle.badge} ${statusStyle.text}`}
+                                  className={`rounded-full px-1.5 py-0.5 text-[10px] font-extrabold uppercase ${statusStyle.badge} ${statusStyle.text}`}
                                 >
                                   {statusStyle.label}
                                 </span>
@@ -836,7 +836,7 @@ export default function GanttPage() {
                                 />
 
                                 <div className="relative z-10 flex h-full items-center justify-between gap-2 px-2.5">
-                                  <span className="truncate text-[12px] font-extrabold text-white sm:text-sm">
+                                  <span className="truncate text-[12px] font-extrabold text-white xs:text-xs">
                                     {progress > 0
                                       ? `${Math.round(progress)}%`
                                       : "0%"}
