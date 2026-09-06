@@ -744,12 +744,13 @@ export default function GanttPage() {
                       {months.map((month) => (
                         <div
                           key={`${month.label}-${month.startIndex}`}
-                          className="flex shrink-0 items-center justify-center border-r border-[#e5e9e5] text-sm font-extrabold text-[#5f6b68]"
+                          className="flex flex-col shrink-0 items-center justify-center border-r border-[#e5e9e5] text-[10px] sm:text-[11px] font-extrabold text-[#5f6b68] leading-tight text-center px-1 overflow-hidden"
                           style={{
                             width: `${(month.days / totalDays) * 100}%`,
                           }}
                         >
-                          {month.label}
+                          <span className="truncate w-full">{month.label.split(' ')[0]}</span>
+                          <span className="truncate w-full">{month.label.split(' ')[1]}</span>
                         </div>
                       ))}
                     </div>

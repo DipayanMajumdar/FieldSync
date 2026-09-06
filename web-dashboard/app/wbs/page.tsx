@@ -217,7 +217,7 @@ function WBSRow({
             )}
 
             <span
-              className={`shrink-0 rounded-md border px-2 py-1 text-[7px] font-extrabold uppercase tracking-wide ${levelStyle}`}
+              className={`shrink-0 rounded-md border px-2 py-1 text-[10px] font-extrabold uppercase tracking-wide ${levelStyle}`}
             >
               {LEVEL_LABELS[node.level]}
             </span>
