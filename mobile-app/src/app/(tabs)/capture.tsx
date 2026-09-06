@@ -44,8 +44,8 @@ export default function CaptureScreen() {
           return;
         }
         await setAudioModeAsync({
-          allowsRecordingIOS: true,
-          playsInSilentModeIOS: true,
+          allowsRecording: true,
+          playsInSilentMode: true,
         });
         recorder.record();
       }
